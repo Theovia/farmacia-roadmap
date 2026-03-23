@@ -140,7 +140,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-label">AI Transformation Roadmap / 12 meses</div>
-      <h1>Transformaci&oacute;n digital completa para Farmacia La Econ&oacute;mica: <em>de sistema operativo a organismo aut&oacute;nomo</em></h1>
+      <h1>AI Transformation Roadmap: <em>Farmacia La Econ&oacute;mica</em></h1>
       <p class="hero-sub">Se ha construido un sistema de inteligencia operativa con 25 pantallas, 47 edge functions y 8,700+ productos migrados, listo para go-live. Este roadmap estabiliza esa base y la lleva al siguiente nivel: agentes de voz que atienden llamadas, un sistema multi-agente que supervisa la operaci&oacute;n, inteligencia aut&oacute;noma que act&uacute;a sin que nadie pregunte, y un m&oacute;dulo de m&eacute;dicos que cierra el ciclo de recetas y comisiones.</p>
 
       <div class="hero-metrics">
@@ -176,8 +176,8 @@
   <!-- COST OF INACTION -->
   <section class="section-dark" style="background: #1A1A1A; color: #FAFAF8; border: none;">
     <div class="wrap">
-      <div class="section-label" style="color: var(--accent);">Lo que la farmacia pierde hoy</div>
-      <div class="section-title" style="color: #FAFAF8;">Cada mes sin actuar tiene un costo medible</div>
+      <div class="section-label" style="color: var(--accent);">Contexto operativo</div>
+      <div class="section-title" style="color: #FAFAF8;">Lo que este roadmap resuelve</div>
 
       <div style="display: grid; gap: 2rem; margin-top: 2rem;">
 
@@ -188,15 +188,15 @@
         </div>
 
         <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
-          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">2 horas de operaci&oacute;n perdidas</div>
-          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Incidente del 19 de marzo de 2026</div>
-          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">63 consultas simult&aacute;neas colapsaron la base de datos. Durante 2 horas nadie pudo buscar productos, procesar ventas, ni consultar inventario. los empleados parados. El sistema de monitoreo aut&oacute;nomo habr&iacute;a detectado el pico de conexiones en menos de 30 segundos, aplicado el l&iacute;mite autom&aacute;ticamente, y enviado un mensaje: &ldquo;Se detect&oacute; un pico an&oacute;malo y se resolvi&oacute;. Cero impacto en operaci&oacute;n.&rdquo;</p>
+          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">Infraestructura propia</div>
+          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Migraci&oacute;n a Cloudflare Workers + Supabase dedicado</div>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Durante el desarrollo se utilizaron servicios de hosting de terceros que presentaron limitaciones de estabilidad en sus servidores compartidos &mdash; saturaciones en el pool de conexiones y tiempos de respuesta del proveedor que no eran aceptables para una operaci&oacute;n cr&iacute;tica. Este roadmap incluye la migraci&oacute;n completa a infraestructura propia con Cloudflare Workers y Supabase dedicado, eliminando la dependencia de terceros: control total sobre base de datos, conexiones, reinicios, y l&iacute;mites de seguridad.</p>
         </div>
 
         <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
           <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">Cada llamada es una interrupci&oacute;n</div>
           <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Atenci&oacute;n telef&oacute;nica y seguimiento de proveedores</div>
-          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Proveedores llaman para ofrecer producto, clientes llaman para preguntar disponibilidad, y quien atiende recepci&oacute;n tiene que pausar lo que est&aacute; haciendo para cotejar informaci&oacute;n manualmente. Con el agente de voz y webhooks conectados al sistema, esas llamadas se resuelven en autom&aacute;tico: consultas de inventario en vivo, confirmaci&oacute;n de precios, y hasta lanzamiento de &oacute;rdenes de compra &mdash; sin que nadie deje de hacer su trabajo.</p>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Clientes llaman para preguntar disponibilidad, precios, horarios, estado de pedidos &mdash; y quien atiende tiene que pausar lo que est&aacute; haciendo para cotejar informaci&oacute;n manualmente. Con el agente de voz conectado al sistema, esas llamadas se resuelven en autom&aacute;tico: consultas de inventario en vivo, confirmaci&oacute;n de precios, y respuestas inmediatas &mdash; sin que nadie deje de hacer su trabajo.</p>
         </div>
 
         <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
@@ -477,6 +477,7 @@
               <li>Cruce caducidad &times; base de clientes: ofertas dirigidas para rotar lotes</li>
               <li>Analytics de eficiencia manufactura por operador</li>
               <li>Backorder dashboard por proveedor con lead time</li>
+              <li><strong>Primeros modelos de Machine Learning</strong>: forecasting de demanda por SKU (predicci&oacute;n semanal/mensual con hasta 5 a&ntilde;os de datos hist&oacute;ricos), predicci&oacute;n de merma con clasificador entrenado en datos reales (no heur&iacute;sticos), y segmentaci&oacute;n de clientes por comportamiento de compra (RFM sobre 5,571 clientes con lealtad)</li>
               <li><strong>Modo auditor&iacute;a</strong>: activaci&oacute;n r&aacute;pida ante inspecci&oacute;n COFEPRIS/SAT &mdash; reporte consolidado de lotes, trazabilidad, FEFO, movimientos con timestamps, reconciliaci&oacute;n Odoo vs stock f&iacute;sico, exportable a PDF</li>
             </ul>
           </div>
@@ -526,7 +527,7 @@
           <div class="tl-month">Mes 12</div>
           <div class="tl-title">AI Natives &mdash; Sesi&oacute;n 5 + entrega del sistema al estado del arte</div>
           <div class="tl-body">
-            <p style="margin-bottom: 0.75rem;">&Uacute;ltima sesi&oacute;n del programa. El equipo consolida todo lo aprendido: interactuar con NemoClaw, interpretar alertas, construir herramientas internas, ser el primer punto de soluci&oacute;n.</p>
+            <p style="margin-bottom: 0.75rem;">&Uacute;ltima sesi&oacute;n del programa. El equipo consolida todo lo aprendido a lo largo de los 12 meses: uso de herramientas de IA, criterio para resolver problemas, construcci&oacute;n de soluciones propias, y autonom&iacute;a para tomar decisiones informadas sin depender de soporte externo.</p>
             <p style="margin-bottom: 0.75rem;">Al cierre del mes 12, la farmacia recibe el sistema m&aacute;s avanzado que la tecnolog&iacute;a actual permite construir para esta operaci&oacute;n: agente de voz, sistema multi-agente, NemoClaw con ciencia de datos en lenguaje natural, visi&oacute;n computacional, modo auditor&iacute;a, inteligencia de cliente, y monitoreo aut&oacute;nomo 24/7. Todo funcionando, todo documentado, todo entregado.</p>
             <p>La inteligencia artificial evoluciona trimestralmente. Si en el futuro hay capacidades nuevas que beneficien a la farmacia &mdash; modelos m&aacute;s potentes, nuevas integraciones, funcionalidades que hoy no existen &mdash; se pueden discutir como una extensi&oacute;n del proyecto en ese momento.</p>
             <ul>
@@ -539,6 +540,15 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- FUTURE PHASE -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">M&aacute;s all&aacute; del mes 12</div>
+      <div class="section-title">Exploraci&oacute;n de Machine Learning</div>
+      <p class="section-desc">Al cierre del roadmap, la farmacia contar&aacute; con hasta 5 a&ntilde;os de datos hist&oacute;ricos de ventas, 5,571 clientes rastreados, 8,700+ productos con velocidad e historial de lotes, y miles de &oacute;rdenes de compra documentadas. Esa base de datos abre la posibilidad de explorar modelos de Machine Learning &mdash; forecasting de demanda, an&aacute;lisis de canasta de compra, elasticidad de precio, detecci&oacute;n de anomal&iacute;as, y optimizaci&oacute;n de puntos de reorden. El alcance y viabilidad de estos modelos se eval&uacute;a al momento, en funci&oacute;n de la calidad y volumen de los datos acumulados. Las discusiones estrat&eacute;gicas al respecto se tienen llegando a ese punto.</p>
     </div>
   </section>
 
