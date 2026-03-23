@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrato &mdash; AI Transformation Roadmap &mdash; Eigen Atlas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --text: #1a1a1a; --text-2: #444; --text-3: #888; --accent: #d97757; --border: #d4d0c8; --bg: #FAFAF8; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { background: #e8e6e0; }
+    body { font-family: 'Newsreader', Georgia, serif; font-size: 15px; line-height: 1.9; color: var(--text); max-width: 800px; margin: 2rem auto; padding: 4rem 5rem; background: white; box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+
+    /* Header */
+    .contract-header { text-align: center; padding-bottom: 2rem; margin-bottom: 2.5rem; border-bottom: 2px solid var(--text); }
+    .contract-brand { font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 1.1rem; color: var(--text-3); letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+    .contract-title { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 0.25rem; }
+    .contract-subtitle { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* Clauses */
+    .clause { margin-bottom: 1.75rem; }
+    .clause-num { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .clause-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; }
+    p { margin-bottom: 0.6rem; text-align: justify; hyphens: auto; }
+    p + p { margin-top: 0; }
+
+    /* Lists */
+    ol.legal { counter-reset: legal; list-style: none; margin: 0.5rem 0 0.75rem 0; }
+    ol.legal li { counter-increment: legal; padding-left: 1.75rem; position: relative; margin-bottom: 0.4rem; }
+    ol.legal li::before { content: counter(legal, lower-roman) "."; position: absolute; left: 0; font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--text-3); font-weight: 500; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    th { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); text-align: left; padding: 0.6rem 0.75rem; border-bottom: 2px solid var(--text); }
+    td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: 2px solid var(--text); }
+    td:first-child { font-weight: 500; white-space: nowrap; width: 30%; }
+    .amount td { font-weight: 600; }
+    .total-row td { border-top: 2px solid var(--text); border-bottom: none; font-weight: 600; font-size: 1rem; padding-top: 0.75rem; }
+
+    /* Signatures */
+    .signatures { display: flex; gap: 4rem; margin-top: 4rem; padding-top: 1rem; }
+    .sig-block { flex: 1; }
+    .sig-line { border-top: 1px solid var(--text); margin-top: 5rem; padding-top: 0.75rem; }
+    .sig-name { font-weight: 600; font-size: 0.9rem; }
+    .sig-role { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.15rem; }
+
+    /* Footer */
+    .contract-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-3); }
+
+    /* Print button */
+    .no-print { position: fixed; top: 1.5rem; right: 1.5rem; z-index: 10; }
+    .btn-print { padding: 0.6rem 1.5rem; background: var(--text); color: white; border: none; border-radius: 4px; font-size: 0.82rem; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .btn-print:hover { opacity: 0.85; }
+
+    @media print {
+      html { background: white; }
+      body { margin: 0; padding: 1cm 1.5cm; box-shadow: none; max-width: none; font-size: 11pt; }
+      .no-print { display: none; }
+      .clause { page-break-inside: avoid; }
+      .signatures { page-break-inside: avoid; }
+      @page { margin: 2cm; }
+    }
+    @media (max-width: 600px) {
+      body { margin: 0; padding: 2rem 1.5rem; }
+      .signatures { flex-direction: column; gap: 2rem; }
+      td:first-child { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button class="btn-print" onclick="window.print()">Imprimir</button>
+  </div>
+
+  <div class="contract-header">
+    <div class="contract-brand">Eigen Atlas</div>
+    <div class="contract-title">Contrato de Prestaci&oacute;n de Servicios Profesionales</div>
+    <div class="contract-subtitle">AI Transformation Roadmap &mdash; 12 meses</div>
+  </div>
+
+  <!-- CLAUSE 1 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula primera</div>
+    <div class="clause-title">Partes</div>
+    <p><strong>EL CLIENTE:</strong> Jes&uacute;s Antonio Guzm&aacute;n Armenta, con domicilio fiscal en Calle Himno 2267, Colonia Guadalajara Oriente, C.P. 44700, Guadalajara, Jalisco, M&eacute;xico. RFC: GUAJ780403QQA. CURP: GUAJ780403HJCZRS07.</p>
+    <p><strong>EL PROVEEDOR:</strong> Ra&uacute;l Ch&iacute;o Le&oacute;n, con domicilio fiscal en Carnaval 1106, C.P. 82000, Mazatl&aacute;n, Sinaloa, M&eacute;xico. RFC: CILR9703266L1. CURP: CILR970326HSLHNL03.</p>
+  </div>
+
+  <!-- CLAUSE 2 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula segunda</div>
+    <div class="clause-title">Objeto</div>
+    <p>EL PROVEEDOR se compromete a prestar al CLIENTE los servicios profesionales correspondientes al AI Transformation Roadmap de 12 meses para Farmacia La Econ&oacute;mica, que comprende el desarrollo, integraci&oacute;n, despliegue y habilitaci&oacute;n de los seis pilares descritos en la cl&aacute;usula tercera, con el fin de estabilizar, evolucionar y automatizar la operaci&oacute;n de la farmacia mediante inteligencia artificial.</p>
+  </div>
+
+  <!-- CLAUSE 3 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula tercera</div>
+    <div class="clause-title">Alcance y entregables</div>
+    <table>
+      <thead><tr><th>Pilar</th><th>Alcance</th></tr></thead>
+      <tbody>
+        <tr><td>1. Evoluci&oacute;n de la aplicaci&oacute;n</td><td>Estabilizaci&oacute;n, migraci&oacute;n de infraestructura, m&oacute;dulo de m&eacute;dicos con receta digital y comisiones, visi&oacute;n computacional, modo auditor&iacute;a, inteligencia de cliente, y transici&oacute;n a autonom&iacute;a operativa.</td></tr>
+        <tr><td>2. Agente de voz</td><td>Fase 1: atenci&oacute;n telef&oacute;nica aut&oacute;noma 24/7. Fase 2: llamadas salientes, alertas multi-canal, escrituras gobernadas en Odoo con aprobaci&oacute;n.</td></tr>
+        <tr><td>3. Sistema multi-agente</td><td>Agentes especializados por dominio, visi&oacute;n/OCR, RAG multimodal, escrituras con aprobaci&oacute;n y auditor&iacute;a end-to-end.</td></tr>
+        <tr><td>4. NVIDIA NemoClaw</td><td>Orquestaci&oacute;n central de agentes, detecci&oacute;n predictiva de caducidad, generaci&oacute;n autom&aacute;tica de &oacute;rdenes de mayoreo, agente conversacional v&iacute;a WhatsApp, digest operativo diario.</td></tr>
+        <tr><td>5. Programa AI Natives</td><td>Habilitaci&oacute;n en IA para los 9 empleados. 4 sesiones presenciales orientadas al desarrollo de habilidades nuevas.</td></tr>
+        <tr><td>6. Monitoreo 24/7</td><td>Agentes aut&oacute;nomos que vigilan la infraestructura completa, detectan anomal&iacute;as y resuelven incidentes sin intervenci&oacute;n humana.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CLAUSE 4 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula cuarta</div>
+    <div class="clause-title">Cronograma</div>
+    <table>
+      <thead><tr><th>Fase</th><th>Periodo</th><th>Entregables principales</th></tr></thead>
+      <tbody>
+        <tr><td>Cimientos</td><td>Meses 1&ndash;3</td><td>Bugs cr&iacute;ticos resueltos, infraestructura migrada, monitoreo formalizado.</td></tr>
+        <tr><td>Inteligencia</td><td>Meses 4&ndash;6</td><td>M&oacute;dulo de m&eacute;dicos, agente de voz Fase 1 y Fase 2.</td></tr>
+        <tr><td>Autonom&iacute;a</td><td>Meses 7&ndash;9</td><td>Sistema multi-agente, agentes de infraestructura, NemoClaw activo.</td></tr>
+        <tr><td>Blindaje</td><td>Meses 10&ndash;12</td><td>Visi&oacute;n computacional, inteligencia de cliente, modo auditor&iacute;a, AI Natives, handoff.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CLAUSE 5 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula quinta</div>
+    <div class="clause-title">Honorarios</div>
+    <table>
+      <thead><tr><th>Concepto</th><th style="text-align:right;">Monto</th></tr></thead>
+      <tbody>
+        <tr class="amount"><td>Retainer mensual</td><td style="text-align:right;">$150,000 MXN + IVA</td></tr>
+        <tr class="total-row"><td>Total del contrato (12 meses)</td><td style="text-align:right;">$1,800,000 MXN + IVA</td></tr>
+      </tbody>
+    </table>
+    <p>Pago mensual dentro de los primeros cinco d&iacute;as h&aacute;biles de cada mes. EL PROVEEDOR emitir&aacute; factura electr&oacute;nica (CFDI) correspondiente.</p>
+  </div>
+
+  <!-- CLAUSE 6 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula sexta</div>
+    <div class="clause-title">Entregables peri&oacute;dicos</div>
+    <p>EL PROVEEDOR entregar&aacute; mensualmente:</p>
+    <ol class="legal">
+      <li>Reporte escrito de avance con features completados y m&eacute;tricas.</li>
+      <li>Demo en vivo de funcionalidades entregadas en el mes.</li>
+      <li>C&oacute;digo fuente actualizado en repositorio del CLIENTE.</li>
+    </ol>
+    <p>En los meses 3, 6 y 9 se realizar&aacute; un balance formal trimestral de progreso contra plan.</p>
+  </div>
+
+  <!-- CLAUSE 7 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula s&eacute;ptima</div>
+    <div class="clause-title">Terminaci&oacute;n anticipada</div>
+    <p>Cualquiera de las partes podr&aacute; rescindir el presente contrato con treinta (30) d&iacute;as naturales de aviso previo por escrito, sin penalizaci&oacute;n. El c&oacute;digo fuente y la documentaci&oacute;n generados hasta la fecha de terminaci&oacute;n son propiedad funcional del CLIENTE y no quedan condicionados al t&eacute;rmino del contrato.</p>
+    <p>En caso de terminaci&oacute;n anticipada, EL CLIENTE liquidar&aacute; los servicios correspondientes al mes en curso.</p>
+  </div>
+
+  <!-- CLAUSE 8 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula octava</div>
+    <div class="clause-title">Garant&iacute;a</div>
+    <p>EL PROVEEDOR garantiza el correcto funcionamiento de los entregables durante seis (6) meses posteriores a la conclusi&oacute;n del contrato, cubriendo errores cr&iacute;ticos atribuibles al desarrollo.</p>
+  </div>
+
+  <!-- CLAUSE 9 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula novena</div>
+    <div class="clause-title">Exclusiones</div>
+    <p>El presente contrato no incluye:</p>
+    <ol class="legal">
+      <li>Licencias de Odoo SaaS (contratadas directamente por EL CLIENTE).</li>
+      <li>Hardware (impresoras, tablets, scanners, c&aacute;maras).</li>
+      <li>OPEX de servicios de terceros (Twilio, STT/TTS, LLM APIs, WhatsApp BSP), estimado en $2,000&ndash;$3,000 MXN mensuales.</li>
+      <li>Capacitaci&oacute;n profunda en IA (disponible por separado).</li>
+      <li>Desarrollo para nuevas sucursales.</li>
+      <li>Soporte posterior al t&eacute;rmino del contrato (se cotiza por separado).</li>
+    </ol>
+  </div>
+
+  <!-- CLAUSE 10 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula d&eacute;cima</div>
+    <div class="clause-title">Confidencialidad</div>
+    <p>Ambas partes se obligan a mantener en estricta confidencialidad toda la informaci&oacute;n a la que tengan acceso con motivo del presente contrato, durante su vigencia y por un periodo de cinco (5) a&ntilde;os posteriores a su terminaci&oacute;n.</p>
+  </div>
+
+  <!-- CLAUSE 11 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula und&eacute;cima</div>
+    <div class="clause-title">Propiedad intelectual</div>
+    <p>EL PROVEEDOR conservar&aacute; la titularidad de cualquier metodolog&iacute;a, c&oacute;digo fuente o herramienta preexistente. EL CLIENTE obtendr&aacute; una licencia perpetua, no exclusiva e intransferible sobre las configuraciones, personalizaciones y desarrollos realizados en el marco del presente contrato.</p>
+  </div>
+
+  <!-- CLAUSE 12 -->
+  <div class="clause">
+    <div class="clause-num">Cl&aacute;usula duod&eacute;cima</div>
+    <div class="clause-title">Legislaci&oacute;n y jurisdicci&oacute;n</div>
+    <p>El presente contrato se regir&aacute; por las leyes vigentes en los Estados Unidos Mexicanos. Para su interpretaci&oacute;n y cumplimiento, las partes se someten a la jurisdicci&oacute;n de los tribunales competentes de la ciudad de Guadalajara, Jalisco.</p>
+  </div>
+
+  <!-- SIGNATURES -->
+  <p style="margin-top: 2.5rem;">Firmado en Guadalajara, Jalisco, a los ______ d&iacute;as del mes de ______________ de 2026.</p>
+
+  <div class="signatures">
+    <div class="sig-block">
+      <div class="sig-line">
+        <div class="sig-name">Jes&uacute;s Antonio Guzm&aacute;n Armenta</div>
+        <div class="sig-role">El Cliente</div>
+      </div>
+    </div>
+    <div class="sig-block">
+      <div class="sig-line">
+        <div class="sig-name">Ra&uacute;l Ch&iacute;o Le&oacute;n</div>
+        <div class="sig-role">El Proveedor</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contract-footer">
+    Eigen Atlas &middot; Documento confidencial &middot; Precios vigentes hasta el 30 de abril de 2026
+  </div>
+
+</body>
+</html>
