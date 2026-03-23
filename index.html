@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transformation Roadmap — Farmacia La Econ&oacute;mica</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C4704B'/><text x='16' y='22' font-size='16' fill='white' text-anchor='middle' font-family='sans-serif' font-weight='bold'>EA</text></svg>">
+  <meta property="og:title" content="AI Transformation Roadmap — Farmacia La Econ&oacute;mica">
+  <meta property="og:description" content="12 meses, 6 pilares, un sistema aut&oacute;nomo. Propuesta de transformaci&oacute;n digital completa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF8; --bg-card: #ffffff;
+      --border: rgba(0,0,0,0.06); --border-strong: rgba(0,0,0,0.12);
+      --text: #1A1A1A; --text-2: #555; --text-3: #999;
+      --accent: #d97757; --accent-light: rgba(196,112,75,0.08); --accent-soft: rgba(196,112,75,0.15);
+      --green: #2D7D46; --green-light: rgba(45,125,70,0.08);
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --serif: 'Newsreader', Georgia, serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    .wrap { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+    .wrap-wide { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; padding: 0.85rem 0; background: rgba(250,250,248,0.92); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; font-style: italic; color: var(--text); text-decoration: none; letter-spacing: 0.01em; }
+    .nav-tag { font-family: var(--mono); font-size: 0.68rem; color: var(--accent); background: var(--accent-light); padding: 0.2rem 0.6rem; border-radius: 3px; }
+
+    /* HERO */
+    .hero { padding: 8rem 0 5rem; border-bottom: 1px solid var(--border); }
+    .hero-label { font-family: var(--mono); font-size: 0.72rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1.5rem; max-width: 750px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 1.1rem; color: var(--text-2); max-width: 600px; line-height: 1.8; }
+
+    .hero-metrics { display: flex; gap: 3rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hero-metric { display: flex; flex-direction: column; }
+    .hero-metric-num { font-family: var(--mono); font-size: 1.6rem; font-weight: 600; color: var(--text); }
+    .hero-metric-label { font-size: 0.75rem; color: var(--text-3); margin-top: 0.2rem; }
+
+    /* SECTIONS */
+    section { padding: 5rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-label { font-family: var(--mono); font-size: 0.72rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.25; margin-bottom: 1.5rem; }
+    .section-desc { color: var(--text-2); font-size: 0.95rem; max-width: 600px; line-height: 1.8; margin-bottom: 2rem; }
+
+    /* PILLAR CARDS */
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+    .pillar { padding: 1.75rem; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card); transition: border-color 0.2s; }
+    .pillar:hover { border-color: var(--accent-soft); }
+    .pillar-num { font-family: var(--mono); font-size: 0.68rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .pillar-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .pillar-desc { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
+    .pillar-price { font-family: var(--mono); font-size: 0.82rem; color: var(--text-3); margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .pillar-price span { color: var(--text); font-weight: 600; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 3rem; margin: 3rem 0; }
+    .timeline::before { content: ''; position: absolute; left: 0.55rem; top: 0; bottom: 0; width: 1px; background: var(--border-strong); }
+    .tl-item { position: relative; padding-bottom: 3rem; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot { position: absolute; left: -2.7rem; top: 0.35rem; width: 13px; height: 13px; border-radius: 50%; border: 2px solid var(--accent); background: var(--bg); z-index: 2; }
+    .tl-item.active .tl-dot { background: var(--accent); }
+    .tl-month { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); font-weight: 500; margin-bottom: 0.3rem; }
+    .tl-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .tl-body { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
+    .tl-body ul { margin: 0.5rem 0 0 1.2rem; }
+    .tl-body li { margin-bottom: 0.3rem; }
+    .tl-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tl-tag { font-family: var(--mono); font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 3px; background: var(--accent-light); color: var(--accent); }
+    .tl-tag.green { background: var(--green-light); color: var(--green); }
+
+    /* PRICING */
+    .pricing-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.9rem; }
+    .pricing-table th { text-align: left; font-family: var(--mono); font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; padding: 0.75rem 0; border-bottom: 1px solid var(--border-strong); }
+    .pricing-table td { padding: 1rem 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .pricing-table td:last-child { text-align: right; font-family: var(--mono); font-weight: 500; white-space: nowrap; }
+    .pricing-table tr.total td { border-bottom: none; border-top: 2px solid var(--text); font-weight: 700; padding-top: 1.25rem; }
+    .pricing-table tr.bundle td { color: var(--accent); font-weight: 700; font-size: 1rem; }
+    .pricing-table .struck { text-decoration: line-through; color: var(--text-3); font-weight: 400; }
+    .pricing-table .savings { font-size: 0.78rem; color: var(--green); font-weight: 600; }
+
+    /* CALLOUT */
+    .callout { margin: 2rem 0; padding: 1.5rem; border-left: 3px solid var(--accent); background: var(--accent-light); border-radius: 0 8px 8px 0; }
+    .callout p { font-size: 0.92rem; color: var(--text-2); line-height: 1.7; }
+    .callout strong { color: var(--text); }
+
+    /* FOUNDATION */
+    .foundation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .foundation-item { text-align: center; padding: 1.25rem 0.75rem; border: 1px solid var(--border); border-radius: 8px; }
+    .foundation-num { font-family: var(--mono); font-size: 1.3rem; font-weight: 600; }
+    .foundation-label { font-size: 0.7rem; color: var(--text-3); margin-top: 0.2rem; }
+
+    /* FOOTER */
+    footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border); }
+    footer p { font-size: 0.78rem; color: var(--text-3); }
+
+    /* INVESTMENT */
+    .invest-box { padding: 2.5rem; border: 2px solid var(--accent); border-radius: 12px; text-align: center; margin: 2rem 0; }
+    .invest-price { font-family: var(--mono); font-size: 2.5rem; font-weight: 700; color: var(--text); }
+    .invest-period { font-size: 1rem; color: var(--text-2); margin-top: 0.25rem; }
+    .invest-note { font-size: 0.82rem; color: var(--text-3); margin-top: 1rem; font-style: italic; }
+
+    /* Timeline phase headers */
+    .tl-phase { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0 1.5rem; margin-top: 1rem; position: relative; }
+    .tl-phase:first-child { margin-top: 0; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 5rem 0 3rem; }
+      .hero-metrics { gap: 1.5rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .timeline { padding-left: 2.5rem; }
+      .foundation-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+    @media print { nav { display: none; } section { padding: 2rem 0; break-inside: avoid; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Eigen Atlas</a>
+      <span class="nav-tag">Propuesta confidencial</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-label">AI Transformation Roadmap / 12 meses</div>
+      <h1>Transformaci&oacute;n digital completa para Farmacia La Econ&oacute;mica: <em>de sistema operativo a organismo aut&oacute;nomo</em></h1>
+      <p class="hero-sub">La farmacia ya opera sobre un sistema de inteligencia con 25 pantallas, 47 edge functions y 8,700+ productos migrados. Este roadmap lleva esa base al siguiente nivel: agentes de voz que atienden llamadas, un sistema multi-agente que supervisa la operaci&oacute;n, inteligencia aut&oacute;noma que act&uacute;a sin que nadie pregunte, y un m&oacute;dulo de m&eacute;dicos que cierra el ciclo de recetas y comisiones.</p>
+
+      <div class="hero-metrics">
+        <div class="hero-metric"><span class="hero-metric-num">6</span><span class="hero-metric-label">pilares de transformaci&oacute;n</span></div>
+        <div class="hero-metric"><span class="hero-metric-num">12</span><span class="hero-metric-label">meses de ejecuci&oacute;n</span></div>
+        <div class="hero-metric"><span class="hero-metric-num">9</span><span class="hero-metric-label">roles impactados</span></div>
+        <div class="hero-metric"><span class="hero-metric-num">$301K</span><span class="hero-metric-label">en merma recuperable identificada</span></div>
+        <div class="hero-metric"><span class="hero-metric-num">$2,355</span><span class="hero-metric-label">OPEX mensual de toda la infraestructura IA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDATION -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Base instalada</div>
+      <div class="section-title">Lo que ya existe y funciona</div>
+      <p class="section-desc">El sistema actual no es un prototipo &mdash; es infraestructura productiva que los 9 roles de la farmacia usan todos los d&iacute;as. Este roadmap construye sobre una base verificada.</p>
+
+      <div class="foundation-grid">
+        <div class="foundation-item"><span class="foundation-num">25</span><span class="foundation-label">pantallas por rol</span></div>
+        <div class="foundation-item"><span class="foundation-num">47</span><span class="foundation-label">edge functions</span></div>
+        <div class="foundation-item"><span class="foundation-num">8,700+</span><span class="foundation-label">SKUs migrados</span></div>
+        <div class="foundation-item"><span class="foundation-num">2,348</span><span class="foundation-label">listas de materiales</span></div>
+        <div class="foundation-item"><span class="foundation-num">57</span><span class="foundation-label">hooks custom</span></div>
+        <div class="foundation-item"><span class="foundation-num">28</span><span class="foundation-label">tablas Supabase</span></div>
+        <div class="foundation-item"><span class="foundation-num">110</span><span class="foundation-label">decisiones documentadas</span></div>
+        <div class="foundation-item"><span class="foundation-num">5,571</span><span class="foundation-label">clientes con lealtad</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST OF INACTION -->
+  <section style="background: #1A1A1A; color: #FAFAF8; border: none;">
+    <div class="wrap">
+      <div class="section-label" style="color: var(--accent);">Lo que la farmacia pierde hoy</div>
+      <div class="section-title" style="color: #FAFAF8;">Cada mes sin actuar tiene un costo medible</div>
+
+      <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+
+        <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
+          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">~$301,000 / a&ntilde;o</div>
+          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Merma por caducidad evitable</div>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">El dashboard de caducidad inteligente ya identific&oacute; $301K en productos en riesgo. Sin el cruce autom&aacute;tico contra la base de 5,571 clientes recurrentes, esos productos caducan en el estante. Con el sistema, se venden 45 d&iacute;as antes a los clientes que de todas formas los iban a comprar. Cada producto que se vende anticipadamente es merma que nunca fue.</p>
+        </div>
+
+        <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
+          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">2 horas de operaci&oacute;n perdidas</div>
+          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Incidente del 19 de marzo de 2026</div>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">63 consultas simult&aacute;neas colapsaron la base de datos. Durante 2 horas nadie pudo buscar productos, procesar ventas, ni consultar inventario. 9 empleados parados. El sistema de monitoreo aut&oacute;nomo habr&iacute;a detectado el pico de conexiones en menos de 30 segundos, aplicado el l&iacute;mite autom&aacute;ticamente, y enviado un mensaje: &ldquo;Se detect&oacute; un pico an&oacute;malo y se resolvi&oacute;. Cero impacto en operaci&oacute;n.&rdquo;</p>
+        </div>
+
+        <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
+          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">~3 horas / d&iacute;a</div>
+          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Tiempo de Lupita en an&aacute;lisis de ofertas</div>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Los proveedores env&iacute;an ofertas en 11 formatos distintos por WhatsApp. Lupita cruza manualmente cada producto contra inventario, precio, velocidad de venta y caducidad. El motor de IA ya reduce esto a segundos por oferta &mdash; pero sin el agente de voz y multi-agente, las llamadas de proveedores siguen interrumpiendo y el seguimiento es manual.</p>
+        </div>
+
+        <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
+          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">100% manual</div>
+          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Comisiones de m&eacute;dicos</div>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Las comisiones del 10% para m&eacute;dicos prescriptores se calculan a mano con libreta y tickets f&iacute;sicos. No hay visibilidad de qu&eacute; m&eacute;dico genera m&aacute;s volumen, qu&eacute; productos recetan, ni cu&aacute;ndo se acumulan liquidaciones. El m&oacute;dulo de m&eacute;dicos cierra este ciclo: receta digital &rarr; QR &rarr; venta con atribuci&oacute;n autom&aacute;tica &rarr; comisi&oacute;n calculada sin intervenci&oacute;n humana.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 PILLARS OVERVIEW -->
+  <section>
+    <div class="wrap-wide">
+      <div class="section-label">Visi&oacute;n general</div>
+      <div class="section-title">6 pilares de transformaci&oacute;n</div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">Pilar 01</div>
+          <div class="pillar-title">Evoluci&oacute;n de la aplicaci&oacute;n</div>
+          <p class="pillar-desc">Estabilizaci&oacute;n, m&oacute;dulo de m&eacute;dicos con receta digital + QR + comisiones FEFO, visi&oacute;n computacional para registro r&aacute;pido de productos, modo auditor&iacute;a para blindaje regulatorio, y transici&oacute;n a autonom&iacute;a operativa.</p>
+          <div class="pillar-price">Valor individual: <span>$850,000 + IVA</span></div>
+          <div style="font-size: 0.75rem; color: #c62828; margin-top: 0.4rem; font-family: var(--mono);">Estabilizaci&oacute;n (sin features nuevos): $500,000 + IVA</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 02</div>
+          <div class="pillar-title">Agente de voz omnicanal</div>
+          <p class="pillar-desc">Un asistente que contesta el tel&eacute;fono de la farmacia 24/7. Los clientes preguntan por disponibilidad, precio y horario sin interrumpir al equipo de piso. En Fase 2, el agente hace llamadas salientes en emergencias y ejecuta acciones gobernadas en Odoo.</p>
+          <div class="pillar-price">Valor individual: <span>$650,000 + IVA</span></div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 03</div>
+          <div class="pillar-title">Sistema multi-agente</div>
+          <p class="pillar-desc">3 chatbots especializados (Cliente, Calidad, Operaci&oacute;n) en Web, Telegram y WhatsApp. Evoluci&oacute;n a agentes que leen recetas por foto, identifican productos, y ejecutan acciones con aprobaci&oacute;n y auditor&iacute;a.</p>
+          <div class="pillar-price">Valor individual: <span>$500,000 + IVA</span></div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 04</div>
+          <div class="pillar-title">NVIDIA NemoClaw &mdash; el cerebro aut&oacute;nomo de la farmacia</div>
+          <p class="pillar-desc">Construida sobre la plataforma que NVIDIA anunci&oacute; en GTC 2026 (Agent Toolkit + OpenShell). No solo alerta &mdash; act&uacute;a. Identifica productos que no se van a vender antes de que caduquen, genera autom&aacute;ticamente &oacute;rdenes de mayoreo, y las env&iacute;a a los grupos de WhatsApp de los clientes que m&aacute;s probabilidades tienen de comprar ese producto espec&iacute;fico. Tony y Humberto consultan lo que quieran del negocio por WhatsApp. El sistema convierte merma potencial en ventas reales sin que nadie lo pida.</p>
+          <div class="pillar-price">Valor individual: <span>$600,000 + IVA</span></div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 05</div>
+          <div class="pillar-title">Programa AI Natives &mdash; habilitaci&oacute;n del equipo</div>
+          <p class="pillar-desc">No es ense&ntilde;arles a usar la app &mdash; es ense&ntilde;arles a pensar con IA. Cada empleado aprende a resolver problemas, redactar, analizar y automatizar tareas con herramientas de inteligencia artificial. La persona que gana $8K/mes y domina IA produce como alguien de $30K. El equipo se vuelve m&aacute;s valioso, no m&aacute;s reemplazable.</p>
+          <div class="pillar-price">Valor individual: <span>$990,000 + IVA</span></div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 06</div>
+          <div class="pillar-title">Monitoreo aut&oacute;nomo 24/7 + prevenci&oacute;n de incidentes</div>
+          <p class="pillar-desc">El 19 de marzo de 2026, 63 consultas simult&aacute;neas colapsaron la base de datos por 2 horas &mdash; 9 empleados parados, cero ventas. Este pilar instala agentes aut&oacute;nomos que vigilan cada capa de la infraestructura, detectan anomal&iacute;as en menos de 30 segundos, aplican l&iacute;mites autom&aacute;ticamente, y resuelven sin intervenci&oacute;n humana. Cuando la farmacia abre a las 8am, el reporte ya dice &ldquo;incidente detectado y resuelto a las 03:12. Cero impacto.&rdquo; Contratar un equipo DevOps para cobertura 24/7 cuesta m&aacute;s que esto.</p>
+          <div class="pillar-price">Valor individual: <span>$800,000 + IVA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Roadmap</div>
+      <div class="section-title">12 meses, hito por hito</div>
+
+      <div class="timeline">
+
+        <div class="tl-phase">Fase 1 &mdash; Cimientos (Meses 1-3)</div>
+
+        <!-- MES 1 -->
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 1</div>
+          <div class="tl-title">Estabilizaci&oacute;n cr&iacute;tica</div>
+          <div class="tl-body">
+            Resoluci&oacute;n de bugs que bloquean operaci&oacute;n diaria: sincronizaci&oacute;n POS con Odoo (3 ventas atascadas = descuadre contable), race condition en el buscador (1-5 segundos de b&uacute;squedas vac&iacute;as al iniciar), Unicode sist&eacute;mico en etiquetas y pre-tickets, persistencia de sesi&oacute;n de caja.
+            <ul>
+              <li>Fix de 4 bugs cr&iacute;ticos documentados</li>
+              <li>Consolidaci&oacute;n BRAND_TO_SUBSTANCE (duplicado en 3 archivos)</li>
+              <li>Cache offline persistente del cat&aacute;logo completo (IndexedDB)</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">App</span><span class="tl-tag">Infraestructura</span></div>
+        </div>
+
+        <!-- MES 2 -->
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 2</div>
+          <div class="tl-title">Migraci&oacute;n de infraestructura + hardening</div>
+          <div class="tl-body">
+            Migraci&oacute;n de Lovable Cloud a Vercel + Supabase Pro &mdash; control total sobre reinicio de base de datos, pool de conexiones, y PgBouncer. Prevenci&oacute;n del incidente del 19 de marzo (63 conexiones simult&aacute;neas colapsaron la DB por 2 horas).
+            <ul>
+              <li>Vercel deployment con CI/CD</li>
+              <li>Supabase Pro ($25/mes) con PgBouncer</li>
+              <li>Flujos incompletos: precotejo reopen/edit, devoluciones UI, PIN descuentos</li>
+              <li>Regla de 3 queries paralelas m&aacute;ximo por operaci&oacute;n</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">Infraestructura</span><span class="tl-tag">App</span></div>
+        </div>
+
+        <!-- MES 3 -->
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 3</div>
+          <div class="tl-title">Agentes de infraestructura + completitud operativa</div>
+          <div class="tl-body">
+            Formalizaci&oacute;n de los agentes de verificaci&oacute;n que hoy corren ad-hoc en Claude Code. Health checks automatizados para cada capa del stack.
+            <ul>
+              <li>Agente Supabase: pool de conexiones, RLS, migraciones, storage</li>
+              <li>Agente Odoo: sesiones POS abiertas, BOMs hu&eacute;rfanos, lotes sin fecha</li>
+              <li>Agente App: deployment, edge function latency, bundle size</li>
+              <li>Retiros mid-session, 70-P rack map, bsc_goals, Resumen Mensual</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">Agentes infra</span><span class="tl-tag">App</span></div>
+        </div>
+
+        <div class="tl-phase">Fase 2 &mdash; Inteligencia (Meses 4-6)</div>
+
+        <!-- MES 4 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 4</div>
+          <div class="tl-title">M&oacute;dulo de m&eacute;dicos + NemoClaw piloto</div>
+          <div class="tl-body">
+            El m&eacute;dico abre su pantalla, busca productos (ordenados por FEFO y margen, invisible para &eacute;l), genera una receta digital. La receta produce un c&oacute;digo QR. El vendedor escanea el QR &mdash; los productos se cargan autom&aacute;ticamente con el tag del m&eacute;dico. Si requieren armado o est&aacute;n en mostrador trasero, la comanda se genera sin intervenci&oacute;n. Las comisiones del 10% se calculan con linaje completo.
+            <ul>
+              <li>Pantalla de receta digital con b&uacute;squeda FEFO-first</li>
+              <li>Generaci&oacute;n QR + impresi&oacute;n de receta f&iacute;sica</li>
+              <li>Integraci&oacute;n con flujo de vendedor: scan &rarr; carga &rarr; comanda autom&aacute;tica</li>
+              <li>C&aacute;lculo de comisiones con atribuci&oacute;n por receta</li>
+              <li><strong>NemoClaw piloto</strong>: agente WhatsApp para Tony y Humberto</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">M&eacute;dicos</span><span class="tl-tag">NemoClaw</span><span class="tl-tag">App</span></div>
+        </div>
+
+        <!-- MES 5 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 5</div>
+          <div class="tl-title">Agente de voz Fase 1 + chatbots IA</div>
+          <div class="tl-body">
+            Despliegue del agente de voz b&aacute;sico (read-only): atiende llamadas PSTN v&iacute;a Twilio, conversa en tiempo real con LiveKit, consulta inventario/precios/horarios en Odoo, crea tickets, y transfiere a humano cuando es necesario. En paralelo, 3 chatbots IA en texto para canales digitales.
+            <ul>
+              <li>Twilio SIP + LiveKit Room + STT/TTS es-MX</li>
+              <li>Consultas: inventario, precio, disponibilidad, horarios, estado de pedido</li>
+              <li>Chatbot Cliente (Web/WhatsApp): consulta por nombre o principio activo, equivalentes</li>
+              <li>Chatbot Calidad: QS con folio, prioridad, estatus</li>
+              <li>Chatbot Operaci&oacute;n: faltantes, caducidades, digest semanal</li>
+              <li>KPI: RTT p95 &le; 800ms, containment &ge; 60%</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">Voz</span><span class="tl-tag">Multi-agente</span></div>
+        </div>
+
+        <!-- MES 6 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 6</div>
+          <div class="tl-title">Features de alto valor + NemoClaw automatizaciones</div>
+          <div class="tl-body">
+            Completitud de los features que el equipo operativo ha solicitado, m&aacute;s la activaci&oacute;n de automatizaciones NemoClaw que act&uacute;an sin que nadie pregunte.
+            <ul>
+              <li>Mayoreo completo para Jenny: b&uacute;squeda &rarr; lista &rarr; PDF cotizaci&oacute;n</li>
+              <li>Apartados con auto-expiraci&oacute;n</li>
+              <li>Cuadre de repartidores (domicilio)</li>
+              <li>Caducidad inteligente con Odoo stock.move (datos reales)</li>
+              <li><strong>NemoClaw crons</strong>: resumen diario, alerta stock cr&iacute;tico, reporte semanal</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">App</span><span class="tl-tag">NemoClaw</span></div>
+        </div>
+
+        <div class="tl-phase">Fase 3 &mdash; Autonom&iacute;a (Meses 7-9)</div>
+
+        <!-- MES 7 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 7</div>
+          <div class="tl-title">Agente de voz Fase 2 &mdash; capacidades ag&eacute;nticas</div>
+          <div class="tl-body">
+            El agente de voz deja de ser pasivo. Ahora puede hacer llamadas salientes en emergencias, enviar alertas multi-canal, consultar herramientas externas, y ejecutar operaciones gobernadas en Odoo con aprobaci&oacute;n.
+            <ul>
+              <li>Mark-out: llamadas salientes con listas priorizadas</li>
+              <li>Alertas voz/SMS/WhatsApp/email con playbooks de escalamiento</li>
+              <li>Asistente acotado: recordatorios de reabasto, agenda proveedores, digest</li>
+              <li>Escrituras en Odoo: borradores de PO, ajustes de stock, precios &mdash; con two-man rule y auditor&iacute;a pre/post</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">Voz</span></div>
+        </div>
+
+        <!-- MES 8 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 8</div>
+          <div class="tl-title">Sistema multi-agente Fase 2 &mdash; orquestaci&oacute;n completa</div>
+          <div class="tl-body">
+            Evoluci&oacute;n de chatbots a un sistema de agentes especializados con enrutador central, RBAC por agente, y capacidad de actuar sobre Odoo con gobernanza.
+            <ul>
+              <li>Agentes por dominio: stock, compras, cat&aacute;logo, precios/promos, calidad, operaci&oacute;n</li>
+              <li>Visi&oacute;n/OCR: recetas, cotizaciones, etiquetas &rarr; identificaci&oacute;n de producto</li>
+              <li>RAG multimodal sobre documentaci&oacute;n operativa</li>
+              <li>Escrituras draft + aprobaci&oacute;n + auditor&iacute;a end-to-end</li>
+              <li>WhatsApp im&aacute;genes/audio habilitados tras validaci&oacute;n</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">Multi-agente</span></div>
+        </div>
+
+        <!-- MES 9 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 9</div>
+          <div class="tl-title">Inteligencia avanzada + agentes infra aut&oacute;nomos</div>
+          <div class="tl-body">
+            Migraci&oacute;n de agentes de infraestructura a NemoClaw o NemoClaw (NVIDIA) como orquestador permanente. La farmacia tiene guardianes aut&oacute;nomos que vigilan cada capa 24/7.
+            <ul>
+              <li>Push notifications por rol (Paco: &ldquo;CR&Iacute;TICO en bodega&rdquo;, Lupita: &ldquo;stockout &rarr; comprar&rdquo;)</li>
+              <li>Sugerencias proactivas de transferencia bodega &rarr; mostrador</li>
+              <li>Sync bidireccional audit (Supabase vs Odoo con retry queue)</li>
+              <li>NemoClaw completo: alertas proactivas de merma/caducidad/desabasto/anomal&iacute;as</li>
+              <li>Agente Sync: detecta drift entre bases de datos sin intervenci&oacute;n humana</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag">Agentes infra</span><span class="tl-tag">NemoClaw</span><span class="tl-tag">App</span></div>
+        </div>
+
+        <div class="tl-phase">Fase 4 &mdash; Blindaje y entrega (Meses 10-12)</div>
+
+        <!-- MES 9.5: VISION COMPUTACIONAL -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 9-10</div>
+          <div class="tl-title">Visi&oacute;n computacional aplicada</div>
+          <div class="tl-body">
+            <p style="margin-bottom: 0.75rem;">Un puesto de registro r&aacute;pido con c&aacute;mara en el &aacute;rea de recepci&oacute;n. El operador coloca el producto, lo voltea para mostrar ambos lados, y el sistema de visi&oacute;n computacional extrae autom&aacute;ticamente: nombre comercial, concentraci&oacute;n, forma farmac&eacute;utica, fabricante, c&oacute;digo de barras, n&uacute;mero de lote y fecha de caducidad. Si el producto ya existe en el cat&aacute;logo, lo identifica y solo pregunta: &ldquo;&iquest;Cu&aacute;ntas unidades?&rdquo; Si es nuevo (gen&eacute;ricos sin transformaci&oacute;n, que llegan sin aviso), lo registra con todos los datos capturados y solicita confirmaci&oacute;n. Elimina la captura manual de datos &mdash; cada producto que hoy requiere 2-3 minutos de escritura se registra en 15 segundos con una foto.</p>
+            <ul>
+              <li><strong>Registro por c&aacute;mara</strong>: 2 tomas (frente + reverso), OCR farmac&eacute;utico especializado en es-MX</li>
+              <li><strong>Match autom&aacute;tico</strong>: cruza contra catálogo de 8,700+ productos por nombre + c&oacute;digo de barras + fabricante</li>
+              <li><strong>Alta autom&aacute;tica de gen&eacute;ricos</strong>: productos sin ficha previa se registran con los datos extra&iacute;dos por visi&oacute;n</li>
+              <li><strong>Monitoreo de actividad en armado</strong>: estimaci&oacute;n de cajas procesadas por turno, visibilidad de productividad sin intervenci&oacute;n manual</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">Visi&oacute;n computacional</span><span class="tl-tag">App</span></div>
+        </div>
+
+        <!-- MES 10 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 10</div>
+          <div class="tl-title">Inteligencia de cliente + analytics avanzado</div>
+          <div class="tl-body">
+            La farmacia tiene 5,571 clientes con tarjeta de lealtad &mdash; cada compra genera datos rastreables. Este mes activa un motor de inteligencia de cliente que convierte esos datos en acci&oacute;n: perfiles de compra (frecuencia, productos recurrentes, sensibilidad a precio), predicci&oacute;n de recompra (si el cliente X compra antihipertensivos cada 30 d&iacute;as y lleva 28 sin venir, el sistema lo detecta), y &mdash; cr&iacute;ticamente &mdash; conexi&oacute;n con caducidad: si hay un lote de Eutirox que caduca en 45 d&iacute;as y 23 clientes lo compran recurrentemente, el sistema genera ofertas personalizadas antes de que el producto se convierta en merma. Cada producto que se vende anticipadamente es merma que no fue.
+            <ul>
+              <li>Perfil de compra por cliente: frecuencia, canasta habitual, respuesta a promos</li>
+              <li>Predicci&oacute;n de recompra: alerta cuando un cliente recurrente no ha regresado</li>
+              <li>Cruce caducidad &times; base de clientes: ofertas dirigidas para rotar lotes</li>
+              <li>Analytics de eficiencia manufactura por operador</li>
+              <li>Backorder dashboard por proveedor con lead time</li>
+              <li>Pago a proveedores (tracking + reconciliaci&oacute;n)</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">Cliente</span><span class="tl-tag">App</span><span class="tl-tag">AI</span></div>
+        </div>
+
+        <!-- MES 11: MODO AUDITORÍA -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 11</div>
+          <div class="tl-title">Modo auditor&iacute;a y blindaje regulatorio</div>
+          <div class="tl-body">
+            <p style="margin-bottom: 0.75rem;">Un mecanismo de activaci&oacute;n r&aacute;pida que, ante una inspecci&oacute;n regulatoria (COFEPRIS, SAT) o cualquier situaci&oacute;n que requiera demostraci&oacute;n inmediata de cumplimiento, consolida y presenta toda la operaci&oacute;n en un estado de verificaci&oacute;n integral. El sistema ya tiene los datos &mdash; este m&oacute;dulo los organiza para que cualquier auditor vea cumplimiento total en segundos, no en horas de b&uacute;squeda manual entre 25 pantallas.</p>
+            <ul>
+              <li><strong>Panel de cumplimiento</strong>: vista consolidada de caducidades vigentes, lotes con trazabilidad completa, movimientos de inventario con timestamps y responsables</li>
+              <li><strong>Reporte FEFO verificable</strong>: evidencia de que el sistema aplica First-Expiry-First-Out en cada venta y transferencia, con log auditable</li>
+              <li><strong>Reconciliaci&oacute;n instant&aacute;nea</strong>: cruce Odoo vs Supabase vs stock f&iacute;sico, con indicadores de discrepancia resueltos o pendientes</li>
+              <li><strong>Generaci&oacute;n de reportes bajo demanda</strong>: movimientos por producto, por lote, por fecha, por responsable &mdash; exportables a PDF en un click</li>
+              <li><strong>Historial de acciones gobernadas</strong>: cada acci&oacute;n del sistema multi-agente y de los agentes de voz queda registrada con pre/post image, aprobador, y timestamp</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">Cumplimiento</span><span class="tl-tag">Seguridad</span></div>
+        </div>
+
+        <!-- MES 11-12: PROGRAMA AI NATIVES -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 11-12</div>
+          <div class="tl-title">Programa AI Natives &mdash; habilitaci&oacute;n del equipo</div>
+          <div class="tl-body">
+            <p style="margin-bottom: 0.75rem;">El objetivo no es ense&ntilde;arles a usar la aplicaci&oacute;n &mdash; es transformar a cada empleado en una persona que piensa, resuelve y trabaja con inteligencia artificial. Lupita no solo recibe recomendaciones de compra: aprende a pedirle a la IA que analice una oferta que ella misma consigui&oacute;. Kevin no solo ve su Kanban: aprende a usar IA para planificar la semana. Cada persona se vuelve m&aacute;s valiosa para la farmacia, no m&aacute;s reemplazable.</p>
+            <ul>
+              <li><strong>Sesi&oacute;n 1: Fundamentos de IA para la vida diaria</strong> &mdash; C&oacute;mo hablarle a un asistente de IA, c&oacute;mo formular preguntas efectivas, qu&eacute; puede y qu&eacute; no puede hacer. Ejercicios con su propio trabajo: redactar un mensaje a un proveedor, resumir un documento, resolver una duda de un cliente</li>
+              <li><strong>Sesi&oacute;n 2: IA aplicada a cada rol</strong> &mdash; Personalizada por persona. Lupita: an&aacute;lisis de ofertas y negociaci&oacute;n. Kevin: planeaci&oacute;n de armado. Paco: organizaci&oacute;n de inventario. Fer: verificaci&oacute;n de recepci&oacute;n. Mayira: conciliaci&oacute;n y reportes. Cada uno sale con 3-5 flujos de trabajo que puede hacer con IA desde su tel&eacute;fono</li>
+              <li><strong>Sesi&oacute;n 3: Automatizaci&oacute;n personal</strong> &mdash; Atajos en el tel&eacute;fono, transcripci&oacute;n de notas de voz, traducci&oacute;n, generaci&oacute;n de listas, c&aacute;lculos r&aacute;pidos. Herramientas gratuitas que ya existen y que ninguno est&aacute; usando</li>
+              <li><strong>Sesi&oacute;n 4: El equipo aut&oacute;nomo</strong> &mdash; C&oacute;mo interactuar con NemoClaw, c&oacute;mo interpretar alertas y dashboards, y c&oacute;mo ser el primer punto de soluci&oacute;n antes de escalar. El equipo deja de depender de soporte externo para operar</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">AI Natives</span><span class="tl-tag green">Habilitaci&oacute;n</span></div>
+        </div>
+
+        <!-- MES 12 -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 12</div>
+          <div class="tl-title">Autonom&iacute;a operativa &mdash; handoff</div>
+          <div class="tl-body">
+            La farmacia opera de forma aut&oacute;noma. Los agentes vigilan la infraestructura. El sistema multi-agente responde consultas y ejecuta acciones gobernadas. El agente de voz atiende llamadas. NemoClaw reporta sin que nadie pregunte. El equipo sabe usar cada herramienta.
+            <ul>
+              <li>Documentaci&oacute;n operativa completa</li>
+              <li>Runbooks de emergencia para cada capa del stack</li>
+              <li>Handoff: la farmacia no depende del desarrollador para operar</li>
+              <li>Plan de soporte post-roadmap (opcional, se cotiza por separado)</li>
+            </ul>
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">Entrega</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY IN THE LIFE -->
+  <section style="background: #1A1A1A; color: #FAFAF8; border: none;">
+    <div class="wrap">
+      <div class="section-label" style="color: var(--accent);">Mes 12</div>
+      <div class="section-title" style="color: #FAFAF8;">Un d&iacute;a t&iacute;pico en la farmacia transformada</div>
+
+      <div style="display: grid; gap: 1.5rem; margin-top: 2rem; font-size: 0.92rem; color: #ccc; line-height: 1.8;">
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">06:30</span>
+          <span>Tony recibe un digest por WhatsApp sin haberlo pedido: ventas de ayer, merma del mes, 3 productos que necesitan atenci&oacute;n, y un sem&aacute;foro verde en los 15 KPIs del Balanced Scorecard. No tuvo que llamar a nadie.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">08:00</span>
+          <span>Un cliente llama preguntando si tienen Amoxicilina 500mg. El agente de voz contesta en el primer tono, confirma disponibilidad y precio, y ofrece apartar el producto. Ning&uacute;n vendedor fue interrumpido.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">09:15</span>
+          <span>El Dr. Mart&iacute;nez abre su pantalla en el consultorio. Busca &ldquo;metformina&rdquo; &mdash; el sistema le muestra primero un lote que caduca en 60 d&iacute;as (sin que &eacute;l sepa por qu&eacute;). Selecciona, imprime la receta con QR. El paciente baja al mostrador.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">09:17</span>
+          <span>El vendedor escanea el QR de la receta. Los 4 productos se cargan autom&aacute;ticamente. Dos est&aacute;n en mostrador &mdash; los agarra. Los otros dos son kits: la comanda se genera sola y Kevin ya los ve en su Kanban. La comisi&oacute;n del Dr. Mart&iacute;nez queda registrada sin que nadie la calcule.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">10:30</span>
+          <span>Un proveedor env&iacute;a una foto de lista de precios por WhatsApp. La IA la parsea en 12 segundos, cruza contra inventario, y le dice a Lupita: &ldquo;3 productos COMPRAR (buen precio + stock bajo), 7 NO COMPRAR (stock suficiente), 1 ESCALAR a Humberto (>$5,000).&rdquo;</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">11:45</span>
+          <span>Llega un proveedor con 12 cajas de gen&eacute;ricos nuevos que no est&aacute;n en el cat&aacute;logo. Fer coloca cada producto frente a la c&aacute;mara, lo voltea. El sistema de visi&oacute;n computacional lee nombre, concentraci&oacute;n, fabricante, lote y caducidad en 15 segundos. Solo confirma unidades. Los 12 productos quedan registrados en 3 minutos &mdash; antes tomaba 40 minutos de captura manual.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">14:00</span>
+          <span>NemoClaw detecta que 8 productos de alta rotaci&oacute;n est&aacute;n a punto de agotarse en mostrador pero tienen excedente en bodega. Genera una sugerencia de transferencia y se la env&iacute;a a Paco por notificaci&oacute;n push. Paco confirma con un tap. La transferencia se ejecuta en Odoo.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">15:00</span>
+          <span>COFEPRIS se presenta sin aviso previo. Humberto activa el modo auditor&iacute;a desde su tablet. En 30 segundos tiene un reporte consolidado: todos los lotes con trazabilidad completa, caducidades verificadas, movimientos de inventario con timestamps y responsables, cumplimiento FEFO documentado. El inspector revisa, verifica 3 productos al azar contra el reporte, todo coincide. Se va en 20 minutos. Antes, esto era un d&iacute;a entero buscando en libretas y hojas de c&aacute;lculo.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">03:00</span>
+          <span style="color: #999;">Nadie est&aacute; despierto. Un agente detecta que la sincronizaci&oacute;n de stock entre Odoo y la app lleva 4 horas de retraso. Identifica la causa (un timeout en la API), reintenta con backoff, resuelve, y registra el incidente. En la ma&ntilde;ana, el reporte dice: &ldquo;Incidente detectado y resuelto a las 03:12. Cero impacto.&rdquo;</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Inversi&oacute;n</div>
+      <div class="section-title">Valor consolidado vs. componentes individuales</div>
+      <p class="section-desc">Cada pilar se ha cotizado previamente como proyecto independiente. El roadmap de 12 meses los integra en una ejecuci&oacute;n coordinada con descuento significativo.</p>
+
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Componente</th><th>Valor individual</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pilar 1 &mdash; Evoluci&oacute;n de la aplicaci&oacute;n<br><small style="color:var(--text-3)">25 pantallas, m&oacute;dulo m&eacute;dicos, visi&oacute;n computacional, modo auditor&iacute;a</small></td><td>$850,000 + IVA</td></tr>
+          <tr><td>Pilar 2 &mdash; Agente de voz omnicanal (Fase 1 + 2)<br><small style="color:var(--text-3)">Atenci&oacute;n telef&oacute;nica 24/7, llamadas salientes, acciones gobernadas</small></td><td>$650,000 + IVA</td></tr>
+          <tr><td>Pilar 3 &mdash; Sistema multi-agente (Fase 1 + 2)<br><small style="color:var(--text-3)">3 chatbots + orquestaci&oacute;n, lectura de recetas por foto, auditor&iacute;a</small></td><td>$500,000 + IVA</td></tr>
+          <tr><td>Pilar 4 &mdash; NVIDIA NemoClaw: inteligencia aut&oacute;noma enterprise<br><small style="color:var(--text-3)">Plataforma GTC 2026, Agent Toolkit + OpenShell, agente WhatsApp, alertas proactivas</small></td><td>$600,000 + IVA</td></tr>
+          <tr><td>Pilar 5 &mdash; Programa AI Natives (habilitaci&oacute;n del equipo)<br><small style="color:var(--text-3)">Programa presencial para convertir a 9 empleados en usuarios nativos de IA</small></td><td>$990,000 + IVA</td></tr>
+          <tr><td>Pilar 6 &mdash; Monitoreo aut&oacute;nomo 24/7<br><small style="color:var(--text-3)">Agentes que vigilan toda la infraestructura, detecci&oacute;n y reparaci&oacute;n autom&aacute;tica</small></td><td>$800,000 + IVA</td></tr>
+          <tr class="total"><td>Suma de componentes individuales</td><td class="struck">$4,390,000 + IVA</td></tr>
+          <tr class="bundle"><td>Roadmap integrado (12 meses)</td><td>$1,800,000 + IVA</td></tr>
+          <tr><td></td><td class="savings">Ahorro: $2,590,000 (59%)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout" style="border-left-color: var(--green); background: var(--green-light); margin-bottom: 2rem;">
+        <p style="font-size: 0.85rem;"><strong>Referencia:</strong> En octubre 2025 se cotizaron el agente de voz ($560K) y el sistema multi-agente ($330K) como proyectos independientes &mdash; solo esos dos pilares sumaban $890,000 + IVA. Este roadmap incluye ambos, m&aacute;s la evoluci&oacute;n completa de la aplicaci&oacute;n, NemoClaw, visi&oacute;n computacional, modo auditor&iacute;a, monitoreo 24/7 y capacitaci&oacute;n. Todo integrado, todo coordinado.</p>
+      </div>
+
+      <div class="invest-box">
+        <div class="invest-price">$150,000 <small style="font-size:0.5em;font-weight:400;color:var(--text-2)">MXN + IVA</small></div>
+        <div class="invest-period">por mes &times; 12 meses</div>
+        <div style="font-family: var(--mono); font-size: 0.82rem; color: var(--text-3); margin-top: 0.75rem;">$5,000 MXN por d&iacute;a &mdash; menos que el costo de un empleado de confianza con IMSS y prestaciones</div>
+        <div class="invest-note" style="margin-top: 1.25rem;">Incluye desarrollo, bugs, features, agentes de voz, sistema multi-agente, NemoClaw, visi&oacute;n computacional, modo auditor&iacute;a, monitoreo 24/7 y capacitaci&oacute;n. Excluye: licencias Odoo, hardware y OPEX de terceros (ver estimaci&oacute;n abajo).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section style="background: var(--green-light); border: none;">
+    <div class="wrap" style="text-align: center;">
+      <div class="section-label" style="color: var(--green);">Garant&iacute;a</div>
+      <div class="section-title">Sin riesgo, sin rehenes</div>
+      <p style="font-size: 1.05rem; color: var(--text-2); max-width: 550px; margin: 0 auto 1.5rem; line-height: 1.8;">Si en los primeros 90 d&iacute;as no hay resultados tangibles, puedes salirte con 30 d&iacute;as de aviso. Sin penalizaci&oacute;n. El c&oacute;digo y la documentaci&oacute;n generados hasta ese momento son tuyos &mdash; entregables continuos, no rehenes al final del contrato.</p>
+      <p style="font-size: 0.88rem; color: var(--text-2); max-width: 550px; margin: 0 auto; line-height: 1.8;">Cada mes incluye: reporte de avance, demo en vivo de features completados, y acceso directo al l&iacute;der t&eacute;cnico. En los checkpoints trimestrales (mes 3, 6, 9), se presenta un balance formal de progreso vs. plan.</p>
+    </div>
+  </section>
+
+  <!-- SCOPE + OPEX -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Alcance</div>
+      <div class="section-title">Qu&eacute; incluye y qu&eacute; no</div>
+
+      <div class="pillars" style="grid-template-columns: 1fr 1fr;">
+        <div class="pillar" style="border-color: var(--green-light);">
+          <div class="pillar-num" style="color: var(--green);">Incluido</div>
+          <div class="tl-body">
+            <ul>
+              <li>Desarrollo completo de los 6 pilares</li>
+              <li>Correcci&oacute;n de bugs y estabilizaci&oacute;n</li>
+              <li>Migraci&oacute;n de infraestructura</li>
+              <li>Visi&oacute;n computacional y modo auditor&iacute;a</li>
+              <li>Soporte prioritario durante los 12 meses</li>
+              <li>Reportes mensuales + demos trimestrales</li>
+              <li>Documentaci&oacute;n t&eacute;cnica y operativa</li>
+              <li>Programa AI Natives: 4 sesiones presenciales de habilitaci&oacute;n en IA</li>
+              <li>C&oacute;digo fuente entregado continuamente</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">No incluido</div>
+          <div class="tl-body">
+            <ul>
+              <li>Licencias de Odoo SaaS</li>
+              <li>Hardware (impresoras, tablets, scanners, c&aacute;mara)</li>
+              <li>OPEX de servicios de terceros (ver estimaci&oacute;n)</li>
+              <li>Capacitaci&oacute;n profunda en IA (disponible por separado)</li>
+              <li>Desarrollo de nuevas sucursales</li>
+              <li>Soporte post-roadmap (se cotiza por separado)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <div class="section-label">OPEX estimado de terceros</div>
+        <p class="section-desc">Servicios que se pagan directamente al proveedor. Los rangos dependen del volumen de uso. Tony tiene visibilidad y control total de estos costos.</p>
+        <table class="pricing-table" style="font-size: 0.85rem;">
+          <thead><tr><th>Servicio</th><th>Estimado mensual</th></tr></thead>
+          <tbody>
+            <tr><td>Supabase Pro (base de datos + edge functions)</td><td>$510 MXN</td></tr>
+            <tr><td>Vercel Pro (hosting de la aplicaci&oacute;n)</td><td>$340 MXN</td></tr>
+            <tr><td>Twilio Voice (500 llamadas/mes, 3 min promedio, M&eacute;xico)</td><td>$840 MXN</td></tr>
+            <tr><td>STT + TTS (Deepgram Nova-3 es-MX + OpenAI TTS HD)</td><td>$540 MXN</td></tr>
+            <tr><td>APIs de IA (GPT-4o-mini / Gemini Flash, ~2,500 llamadas/mes)</td><td>$30 MXN</td></tr>
+            <tr><td>WhatsApp Business API (200 marketing + 300 utilidad/mes)</td><td>$95 MXN</td></tr>
+            <tr class="total"><td><strong>Estimado total OPEX</strong></td><td><strong>~$2,355 /mes</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.78rem; color: var(--text-3); margin-top: 0.5rem; font-style: italic;">Estimaci&oacute;n basada en precios publicados a marzo 2026. El costo total de APIs de IA es pr&aacute;cticamente insignificante a este volumen &mdash; el stack completo cuesta menos que 2 d&iacute;as de salario m&iacute;nimo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY REFERENCE -->
+  <section>
+    <div class="wrap" style="text-align: center;">
+      <div class="section-label">Evidencia</div>
+      <div class="section-title">Este roadmap construye sobre una base documentada</div>
+      <p style="font-size: 0.95rem; color: var(--text-2); max-width: 550px; margin: 0 auto 1.5rem; line-height: 1.8;">El sistema actual &mdash; 25 pantallas, 47 edge functions, 8,700+ SKUs migrados, 110 decisiones documentadas &mdash; est&aacute; detallado en un caso de estudio t&eacute;cnico completo con 19 diagramas de arquitectura.</p>
+      <a href="https://theovia.github.io/jd-mfw-workshop/case-study.html" target="_blank" style="font-family: var(--mono); font-size: 0.85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px;">Ver caso de estudio completo &rarr;</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: #1A1A1A; color: #FAFAF8; border: none;">
+    <div class="wrap" style="text-align: center;">
+      <div class="section-label" style="color: var(--accent);">Siguiente paso</div>
+      <div class="section-title" style="color: #FAFAF8; font-size: 1.8rem;">Una llamada de 30 minutos para definir la fecha de arranque</div>
+      <p style="font-size: 1rem; color: #ccc; max-width: 500px; margin: 1rem auto 2rem; line-height: 1.8;">Los precios y condiciones de esta propuesta est&aacute;n vigentes hasta el <strong style="color: #FAFAF8;">30 de abril de 2026</strong>. Despu&eacute;s de esa fecha, los costos de APIs de inteligencia artificial se ajustan trimestralmente.</p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
+        <a href="https://wa.me/5213314397921?text=Tony%20Armenta%20-%20Propuesta%20Roadmap%2012%20meses" target="_blank" style="display: inline-block; padding: 1rem 2.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; transition: opacity 0.2s;">Contactar por WhatsApp</a>
+        <span style="font-family: var(--mono); font-size: 0.78rem; color: #999;">Ra&uacute;l Ch&iacute;o Le&oacute;n &mdash; Eigen Atlas</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p style="margin-bottom:0.5rem;"><em>Eigen Atlas</em> / Propuesta confidencial</p>
+      <p>Documento preparado para Jes&uacute;s Antonio Guzm&aacute;n Armenta. Precios vigentes hasta el 30 de abril de 2026. Todos los precios en MXN + IVA. Informaci&oacute;n protegida por acuerdo de confidencialidad.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
