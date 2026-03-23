@@ -278,8 +278,7 @@
               <li>Autenticaci&oacute;n real en producci&oacute;n (hoy est&aacute; desactivada por un flag de desarrollo)</li>
               <li>Credenciales de Odoo migradas a variables de entorno del servidor &mdash; eliminadas del navegador</li>
               <li>Validaci&oacute;n JWT en todas las funciones de escritura (compras, manufactura, inventario)</li>
-              <li>Sincronizaci&oacute;n POS &harr; Odoo en tiempo real: cada venta se refleja instant&aacute;neamente</li>
-              <li>Pipeline de ventas en vivo desde Odoo (pos.order) &mdash; el motor de IA deja de depender de datos de Excel 2025 y empieza a trabajar con transacciones reales</li>
+              <li>Pipeline de ventas en vivo desde Odoo (pos.order) &mdash; el motor de IA deja de depender de datos de Excel y empieza a trabajar con transacciones reales</li>
             </ul>
           </div>
           <div class="tl-tags"><span class="tl-tag">Seguridad</span><span class="tl-tag">Datos</span></div>
@@ -289,35 +288,34 @@
         <div class="tl-item active">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 2</div>
-          <div class="tl-title">Infraestructura propia + trazabilidad de lotes</div>
+          <div class="tl-title">Migraci&oacute;n a Cloudflare Workers + Supabase dedicado</div>
           <div class="tl-body">
-            <p style="margin-bottom: 0.75rem;">La plataforma migra de hosting compartido a infraestructura con control total: reinicio de base de datos en minutos (no horas), pool de conexiones administrado, y l&iacute;mites de seguridad que previenen el colapso del 19 de marzo. En paralelo, se cierra el gap m&aacute;s cr&iacute;tico para caducidades: hoy la recepci&oacute;n de mercanc&iacute;a no captura n&uacute;mero de lote ni fecha de expiraci&oacute;n &mdash; el sistema FEFO opera parcialmente ciego. Este mes se activa la captura de lotes en recepci&oacute;n.</p>
+            <p style="margin-bottom: 0.75rem;">La plataforma se mueve de hosting compartido de terceros a infraestructura propia con control total. Cloudflare Workers para el frontend y edge computing, Supabase con instancia dedicada para la base de datos. Control directo sobre pool de conexiones, l&iacute;mites de concurrencia, reinicios, y escalamiento. La farmacia deja de depender de la disponibilidad y tiempos de respuesta de un proveedor de hosting externo.</p>
             <ul>
-              <li>Migraci&oacute;n a infraestructura propia con pool de conexiones y l&iacute;mites de concurrencia</li>
-              <li>Captura de lotes y fechas de caducidad en recepci&oacute;n de mercanc&iacute;a &mdash; FEFO deja de estar ciego</li>
-              <li>Flujos operativos completos: recepci&oacute;n editable post-cierre, devoluciones, PIN para descuentos</li>
+              <li>Cloudflare Workers: deployment global, edge computing, cach&eacute; inteligente</li>
+              <li>Supabase dedicado: pool de conexiones administrado, backups controlados</li>
+              <li>Primeros agentes de vigilancia de infraestructura: detecci&oacute;n de saturaci&oacute;n, sync retrasado, sesiones hu&eacute;rfanas</li>
+              <li>Health monitoring automatizado con alertas</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag">Infraestructura</span><span class="tl-tag">FEFO</span></div>
+          <div class="tl-tags"><span class="tl-tag">Infraestructura</span><span class="tl-tag">Agentes</span></div>
         </div>
 
         <!-- MES 3 -->
         <div class="tl-item active">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 3</div>
-          <div class="tl-title">Rendimiento, integridad de datos y primeros agentes de vigilancia</div>
+          <div class="tl-title">Optimizaci&oacute;n de rendimiento + integridad de datos en vivo</div>
           <div class="tl-body">
-            <p style="margin-bottom: 0.75rem;">El buscador de 8,700+ productos se optimiza para que no reconstruya su &iacute;ndice cada vez que se abre (hoy lo hace). Las suscripciones en tiempo real se corrigen para no acumular conexiones abiertas. La velocidad de venta de productos armados se recalcula con el ratio BOM correcto &mdash; hoy sobreestima o subestima cobertura dependiendo del tipo de producto. Y se despliegan los primeros agentes aut&oacute;nomos de vigilancia.</p>
+            <p style="margin-bottom: 0.75rem;">Con la infraestructura propia ya operando, este mes se enfoca en que la aplicaci&oacute;n escale sin degradarse. Correcci&oacute;n de memory leaks en conexiones de tiempo real, optimizaci&oacute;n del buscador para que mantenga su &iacute;ndice en memoria sin reconstruirlo, y activaci&oacute;n del Sell-through KPI con datos reales de movimientos de stock en Odoo &mdash; reemplazando los estimados heur&iacute;sticos que se usaron durante la migraci&oacute;n.</p>
             <ul>
-              <li>Indexaci&oacute;n del buscador una sola vez por sesi&oacute;n (no en cada vista)</li>
-              <li>Correcci&oacute;n de memory leaks en suscripciones Realtime</li>
+              <li>Correcci&oacute;n de memory leaks en suscripciones Realtime (conexiones que se acumulan sin cerrarse)</li>
+              <li>Optimizaci&oacute;n del buscador: indexaci&oacute;n persistente en memoria, no reconstrucci&oacute;n por vista</li>
+              <li>Sell-through KPI con datos reales de stock.move de Odoo (no heur&iacute;sticos de bootstrap)</li>
               <li>Velocidad de venta con ratio BOM correcto para productos ARMADO</li>
-              <li>Sell-through KPI con datos reales de stock.move (no heur&iacute;sticos de bootstrap)</li>
-              <li>Primeros agentes: sesi&oacute;n POS abierta sin raz&oacute;n, lotes sin fecha, sync retrasado</li>
-              <li>Aprobaciones de compra migradas de localStorage a base de datos (persistentes entre dispositivos)</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag">Rendimiento</span><span class="tl-tag">Agentes</span><span class="tl-tag">Datos</span></div>
+          <div class="tl-tags"><span class="tl-tag">Rendimiento</span><span class="tl-tag">Datos</span></div>
         </div>
 
         <div class="tl-item active">
