@@ -14,7 +14,7 @@
       --bg: #FAFAF8; --bg-card: #ffffff;
       --border: rgba(0,0,0,0.06); --border-strong: rgba(0,0,0,0.12);
       --text: #1A1A1A; --text-2: #555; --text-3: #999;
-      --accent: #d97757; --accent-light: rgba(196,112,75,0.08); --accent-soft: rgba(196,112,75,0.15);
+      --accent: #1a365d; --accent-light: rgba(26,54,93,0.05); --accent-soft: rgba(26,54,93,0.12);
       --green: #2D7D46; --green-light: rgba(45,125,70,0.08);
       --sans: 'Inter', system-ui, -apple-system, sans-serif;
       --serif: 'Newsreader', Georgia, serif;
@@ -54,12 +54,12 @@
 
     /* PILLAR CARDS */
     .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
-    .pillar { padding: 1.75rem; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card); transition: border-color 0.2s; }
+    .pillar { padding: 1.75rem; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card); transition: border-color 0.2s; display: flex; flex-direction: column; }
     .pillar:hover { border-color: var(--accent-soft); }
     .pillar-num { font-family: var(--mono); font-size: 0.68rem; color: var(--accent); margin-bottom: 0.5rem; }
     .pillar-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem; }
     .pillar-desc { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
-    .pillar-price { font-family: var(--mono); font-size: 0.82rem; color: var(--text-3); margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .pillar-price { font-family: var(--mono); font-size: 0.82rem; color: var(--text-3); margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border); }
     .pillar-price span { color: var(--text); font-weight: 600; }
 
     /* TIMELINE */
@@ -74,8 +74,8 @@
     .tl-body { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
     .tl-body ul { margin: 0.5rem 0 0 1.2rem; }
     .tl-body li { margin-bottom: 0.3rem; }
-    .tl-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
-    .tl-tag { font-family: var(--mono); font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 3px; background: var(--accent-light); color: var(--accent); }
+    .tl-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tl-tag { font-family: var(--mono); font-size: 0.62rem; padding: 0.12rem 0.4rem; border-radius: 3px; background: var(--accent-light); color: var(--accent); white-space: nowrap; }
     .tl-tag.green { background: var(--green-light); color: var(--green); }
 
     /* PRICING */
@@ -113,6 +113,9 @@
     .tl-phase { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0 1.5rem; margin-top: 1rem; position: relative; }
     .tl-phase:first-child { margin-top: 0; }
 
+    /* Dark section accent override for contrast */
+    .section-dark { --accent: #5591C8; --green: #3A9957; --accent-light: rgba(85,145,200,0.10); --accent-soft: rgba(85,145,200,0.20); }
+
     @media (max-width: 600px) {
       .hero { padding: 5rem 0 3rem; }
       .hero-metrics { gap: 1.5rem; }
@@ -138,12 +141,12 @@
     <div class="wrap">
       <div class="hero-label">AI Transformation Roadmap / 12 meses</div>
       <h1>Transformaci&oacute;n digital completa para Farmacia La Econ&oacute;mica: <em>de sistema operativo a organismo aut&oacute;nomo</em></h1>
-      <p class="hero-sub">La farmacia ya opera sobre un sistema de inteligencia con 25 pantallas, 47 edge functions y 8,700+ productos migrados. Este roadmap lleva esa base al siguiente nivel: agentes de voz que atienden llamadas, un sistema multi-agente que supervisa la operaci&oacute;n, inteligencia aut&oacute;noma que act&uacute;a sin que nadie pregunte, y un m&oacute;dulo de m&eacute;dicos que cierra el ciclo de recetas y comisiones.</p>
+      <p class="hero-sub">Se ha construido un sistema de inteligencia operativa con 25 pantallas, 47 edge functions y 8,700+ productos migrados, listo para go-live. Este roadmap estabiliza esa base y la lleva al siguiente nivel: agentes de voz que atienden llamadas, un sistema multi-agente que supervisa la operaci&oacute;n, inteligencia aut&oacute;noma que act&uacute;a sin que nadie pregunte, y un m&oacute;dulo de m&eacute;dicos que cierra el ciclo de recetas y comisiones.</p>
 
       <div class="hero-metrics">
         <div class="hero-metric"><span class="hero-metric-num">6</span><span class="hero-metric-label">pilares de transformaci&oacute;n</span></div>
         <div class="hero-metric"><span class="hero-metric-num">12</span><span class="hero-metric-label">meses de ejecuci&oacute;n</span></div>
-        <div class="hero-metric"><span class="hero-metric-num">9</span><span class="hero-metric-label">roles impactados</span></div>
+        <div class="hero-metric"><span class="hero-metric-num">25</span><span class="hero-metric-label">pantallas por rol</span></div>
         <div class="hero-metric"><span class="hero-metric-num">$301K</span><span class="hero-metric-label">en merma recuperable identificada</span></div>
         <div class="hero-metric"><span class="hero-metric-num">$2,355</span><span class="hero-metric-label">OPEX mensual de toda la infraestructura IA</span></div>
       </div>
@@ -154,8 +157,8 @@
   <section>
     <div class="wrap">
       <div class="section-label">Base instalada</div>
-      <div class="section-title">Lo que ya existe y funciona</div>
-      <p class="section-desc">El sistema actual no es un prototipo &mdash; es infraestructura productiva que los 9 roles de la farmacia usan todos los d&iacute;as. Este roadmap construye sobre una base verificada.</p>
+      <div class="section-title">Lo que ya se construy&oacute;</div>
+      <p class="section-desc">El sistema actual no es un prototipo &mdash; es infraestructura verificada con 110 decisiones documentadas, lista para entrar en operaci&oacute;n. Este roadmap lo estabiliza, lo blinda, y lo lleva a autonom&iacute;a.</p>
 
       <div class="foundation-grid">
         <div class="foundation-item"><span class="foundation-num">25</span><span class="foundation-label">pantallas por rol</span></div>
@@ -171,7 +174,7 @@
   </section>
 
   <!-- COST OF INACTION -->
-  <section style="background: #1A1A1A; color: #FAFAF8; border: none;">
+  <section class="section-dark" style="background: #1A1A1A; color: #FAFAF8; border: none;">
     <div class="wrap">
       <div class="section-label" style="color: var(--accent);">Lo que la farmacia pierde hoy</div>
       <div class="section-title" style="color: #FAFAF8;">Cada mes sin actuar tiene un costo medible</div>
@@ -187,13 +190,13 @@
         <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
           <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">2 horas de operaci&oacute;n perdidas</div>
           <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Incidente del 19 de marzo de 2026</div>
-          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">63 consultas simult&aacute;neas colapsaron la base de datos. Durante 2 horas nadie pudo buscar productos, procesar ventas, ni consultar inventario. 9 empleados parados. El sistema de monitoreo aut&oacute;nomo habr&iacute;a detectado el pico de conexiones en menos de 30 segundos, aplicado el l&iacute;mite autom&aacute;ticamente, y enviado un mensaje: &ldquo;Se detect&oacute; un pico an&oacute;malo y se resolvi&oacute;. Cero impacto en operaci&oacute;n.&rdquo;</p>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">63 consultas simult&aacute;neas colapsaron la base de datos. Durante 2 horas nadie pudo buscar productos, procesar ventas, ni consultar inventario. los empleados parados. El sistema de monitoreo aut&oacute;nomo habr&iacute;a detectado el pico de conexiones en menos de 30 segundos, aplicado el l&iacute;mite autom&aacute;ticamente, y enviado un mensaje: &ldquo;Se detect&oacute; un pico an&oacute;malo y se resolvi&oacute;. Cero impacto en operaci&oacute;n.&rdquo;</p>
         </div>
 
         <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
-          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">~3 horas / d&iacute;a</div>
-          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Tiempo de Lupita en an&aacute;lisis de ofertas</div>
-          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Los proveedores env&iacute;an ofertas en 11 formatos distintos por WhatsApp. Lupita cruza manualmente cada producto contra inventario, precio, velocidad de venta y caducidad. El motor de IA ya reduce esto a segundos por oferta &mdash; pero sin el agente de voz y multi-agente, las llamadas de proveedores siguen interrumpiendo y el seguimiento es manual.</p>
+          <div style="font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">Cada llamada es una interrupci&oacute;n</div>
+          <div style="font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.3rem 0 0.75rem;">Atenci&oacute;n telef&oacute;nica y seguimiento de proveedores</div>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.7;">Proveedores llaman para ofrecer producto, clientes llaman para preguntar disponibilidad, y quien atiende recepci&oacute;n tiene que pausar lo que est&aacute; haciendo para cotejar informaci&oacute;n manualmente. Con el agente de voz y webhooks conectados al sistema, esas llamadas se resuelven en autom&aacute;tico: consultas de inventario en vivo, confirmaci&oacute;n de precios, y hasta lanzamiento de &oacute;rdenes de compra &mdash; sin que nadie deje de hacer su trabajo.</p>
         </div>
 
         <div style="padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.04); border-radius: 0 8px 8px 0;">
@@ -235,19 +238,19 @@
         <div class="pillar">
           <div class="pillar-num">Pilar 04</div>
           <div class="pillar-title">NVIDIA NemoClaw &mdash; el cerebro aut&oacute;nomo de la farmacia</div>
-          <p class="pillar-desc">Construida sobre la plataforma que NVIDIA anunci&oacute; en GTC 2026 (Agent Toolkit + OpenShell). No solo alerta &mdash; act&uacute;a. Identifica productos que no se van a vender antes de que caduquen, genera autom&aacute;ticamente &oacute;rdenes de mayoreo, y las env&iacute;a a los grupos de WhatsApp de los clientes que m&aacute;s probabilidades tienen de comprar ese producto espec&iacute;fico. Tony y Humberto consultan lo que quieran del negocio por WhatsApp. El sistema convierte merma potencial en ventas reales sin que nadie lo pida.</p>
+          <p class="pillar-desc">Construida sobre la plataforma que NVIDIA anunci&oacute; en GTC 2026 (Agent Toolkit + OpenShell). No solo alerta &mdash; act&uacute;a. Identifica productos que no se van a vender antes de que caduquen, genera autom&aacute;ticamente &oacute;rdenes de mayoreo, y las env&iacute;a a los grupos de WhatsApp de los clientes que m&aacute;s probabilidades tienen de comprar ese producto espec&iacute;fico. Tony y Humberto tienen un cient&iacute;fico de datos disponible 24/7 por WhatsApp: hacen preguntas complejas de negocio en lenguaje natural y NemoClaw genera queries avanzados que cruzan m&uacute;ltiples tablas, calculan correlaciones, proyectan escenarios, y responden con an&aacute;lisis estructurados &mdash; no res&uacute;menes, no dashboards est&aacute;ticos: ciencia de datos en tiempo real sobre los datos reales de la farmacia. Y cuando nadie pregunta, convierte merma potencial en ventas reales.</p>
           <div class="pillar-price">Valor individual: <span>$600,000 + IVA</span></div>
         </div>
         <div class="pillar">
           <div class="pillar-num">Pilar 05</div>
           <div class="pillar-title">Programa AI Natives &mdash; la ventaja que nadie m&aacute;s tiene</div>
-          <p class="pillar-desc">La operaci&oacute;n ya la resuelve la plataforma. Este programa le da al equipo habilidades nuevas que hoy no tienen: crear contenido para redes sociales, dise&ntilde;ar material promocional, redactar comunicaciones profesionales, investigar productos y proveedores, resolver problemas sin escalar. 9 personas que antes solo operaban la farmacia ahora contribuyen al negocio en dimensiones que antes requer&iacute;an contratar talento externo.</p>
+          <p class="pillar-desc">La operaci&oacute;n ya la resuelve la plataforma. Este programa le da al equipo habilidades nuevas que hoy no tienen: crear herramientas internas para resolver problemas espec&iacute;ficos de la farmacia, redactar comunicaciones profesionales, investigar productos y proveedores, y resolver situaciones sin escalar. El equipo que antes solo operaba la farmacia ahora contribuye al negocio en dimensiones que antes requer&iacute;an contratar talento externo.</p>
           <div class="pillar-price">Valor individual: <span>$990,000 + IVA</span></div>
         </div>
         <div class="pillar">
           <div class="pillar-num">Pilar 06</div>
           <div class="pillar-title">Infraestructura aut&oacute;noma + prevenci&oacute;n de incidentes</div>
-          <p class="pillar-desc">El 19 de marzo de 2026, 63 consultas simult&aacute;neas colapsaron la base de datos por 2 horas &mdash; 9 empleados parados, cero ventas. Este pilar instala agentes aut&oacute;nomos que vigilan cada capa de la infraestructura, detectan anomal&iacute;as en menos de 30 segundos, aplican l&iacute;mites autom&aacute;ticamente, y resuelven sin intervenci&oacute;n humana. Cuando la farmacia abre a las 8am, el reporte ya dice &ldquo;incidente detectado y resuelto a las 03:12. Cero impacto.&rdquo; Contratar un equipo DevOps para cobertura 24/7 cuesta m&aacute;s que esto.</p>
+          <p class="pillar-desc">El 19 de marzo de 2026, 63 consultas simult&aacute;neas colapsaron la base de datos por 2 horas &mdash; los empleados parados, cero ventas. Este pilar instala agentes aut&oacute;nomos que vigilan cada capa de la infraestructura, detectan anomal&iacute;as en menos de 30 segundos, aplican l&iacute;mites autom&aacute;ticamente, y resuelven sin intervenci&oacute;n humana. Cuando la farmacia abre a las 8am, el reporte ya dice &ldquo;incidente detectado y resuelto a las 03:12. Cero impacto.&rdquo; Contratar un equipo DevOps para cobertura 24/7 cuesta m&aacute;s que esto.</p>
           <div class="pillar-price">Valor individual: <span>$800,000 + IVA</span></div>
         </div>
       </div>
@@ -268,50 +271,65 @@
         <div class="tl-item active">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 1</div>
-          <div class="tl-title">Estabilizaci&oacute;n cr&iacute;tica</div>
+          <div class="tl-title">Seguridad, sincronizaci&oacute;n y datos en vivo</div>
           <div class="tl-body">
-            Resoluci&oacute;n de bugs que bloquean operaci&oacute;n diaria: sincronizaci&oacute;n POS con Odoo (3 ventas atascadas = descuadre contable), race condition en el buscador (1-5 segundos de b&uacute;squedas vac&iacute;as al iniciar), Unicode sist&eacute;mico en etiquetas y pre-tickets, persistencia de sesi&oacute;n de caja.
+            <p style="margin-bottom: 0.75rem;">La aplicaci&oacute;n necesita tres correcciones de seguridad antes de operar con confianza: el bypass de autenticaci&oacute;n debe activarse solo en desarrollo, las credenciales de Odoo deben salir del navegador y vivir exclusivamente en el servidor, y las funciones que escriben datos deben validar identidad antes de ejecutar. Son correcciones de arquitectura, no de interfaz.</p>
             <ul>
-              <li>Fix de 4 bugs cr&iacute;ticos documentados</li>
-              <li>Consolidaci&oacute;n BRAND_TO_SUBSTANCE (duplicado en 3 archivos)</li>
-              <li>Cache offline persistente del cat&aacute;logo completo (IndexedDB)</li>
+              <li>Autenticaci&oacute;n real en producci&oacute;n (hoy est&aacute; desactivada por un flag de desarrollo)</li>
+              <li>Credenciales de Odoo migradas a variables de entorno del servidor &mdash; eliminadas del navegador</li>
+              <li>Validaci&oacute;n JWT en todas las funciones de escritura (compras, manufactura, inventario)</li>
+              <li>Sincronizaci&oacute;n POS &harr; Odoo en tiempo real: cada venta se refleja instant&aacute;neamente</li>
+              <li>Pipeline de ventas en vivo desde Odoo (pos.order) &mdash; el motor de IA deja de depender de datos de Excel 2025 y empieza a trabajar con transacciones reales</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag">App</span><span class="tl-tag">Infraestructura</span></div>
+          <div class="tl-tags"><span class="tl-tag">Seguridad</span><span class="tl-tag">Datos</span></div>
         </div>
 
         <!-- MES 2 -->
         <div class="tl-item active">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 2</div>
-          <div class="tl-title">Migraci&oacute;n de infraestructura + hardening</div>
+          <div class="tl-title">Infraestructura propia + trazabilidad de lotes</div>
           <div class="tl-body">
-            Migraci&oacute;n de Lovable Cloud a Vercel + Supabase Pro &mdash; control total sobre reinicio de base de datos, pool de conexiones, y PgBouncer. Prevenci&oacute;n del incidente del 19 de marzo (63 conexiones simult&aacute;neas colapsaron la DB por 2 horas).
+            <p style="margin-bottom: 0.75rem;">La plataforma migra de hosting compartido a infraestructura con control total: reinicio de base de datos en minutos (no horas), pool de conexiones administrado, y l&iacute;mites de seguridad que previenen el colapso del 19 de marzo. En paralelo, se cierra el gap m&aacute;s cr&iacute;tico para caducidades: hoy la recepci&oacute;n de mercanc&iacute;a no captura n&uacute;mero de lote ni fecha de expiraci&oacute;n &mdash; el sistema FEFO opera parcialmente ciego. Este mes se activa la captura de lotes en recepci&oacute;n.</p>
             <ul>
-              <li>Vercel deployment con CI/CD</li>
-              <li>Supabase Pro ($25/mes) con PgBouncer</li>
-              <li>Flujos incompletos: precotejo reopen/edit, devoluciones UI, PIN descuentos</li>
-              <li>Regla de 3 queries paralelas m&aacute;ximo por operaci&oacute;n</li>
+              <li>Migraci&oacute;n a infraestructura propia con pool de conexiones y l&iacute;mites de concurrencia</li>
+              <li>Captura de lotes y fechas de caducidad en recepci&oacute;n de mercanc&iacute;a &mdash; FEFO deja de estar ciego</li>
+              <li>Flujos operativos completos: recepci&oacute;n editable post-cierre, devoluciones, PIN para descuentos</li>
+              <li>Correcci&oacute;n de c&aacute;lculo IVA en tickets (hoy muestra 16% cuando todos los productos son precio final)</li>
+              <li>Asignaci&oacute;n de rack para los 1,332 productos sin ubicaci&oacute;n registrada</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag">Infraestructura</span><span class="tl-tag">App</span></div>
+          <div class="tl-tags"><span class="tl-tag">Infraestructura</span><span class="tl-tag">FEFO</span></div>
         </div>
 
         <!-- MES 3 -->
         <div class="tl-item active">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 3</div>
-          <div class="tl-title">Agentes de infraestructura + completitud operativa</div>
+          <div class="tl-title">Rendimiento, integridad de datos y primeros agentes de vigilancia</div>
           <div class="tl-body">
-            Formalizaci&oacute;n de los agentes de verificaci&oacute;n que hoy corren ad-hoc en Claude Code. Health checks automatizados para cada capa del stack.
+            <p style="margin-bottom: 0.75rem;">El buscador de 8,700+ productos se optimiza para que no reconstruya su &iacute;ndice cada vez que se abre (hoy lo hace). Las suscripciones en tiempo real se corrigen para no acumular conexiones abiertas. La velocidad de venta de productos armados se recalcula con el ratio BOM correcto &mdash; hoy sobreestima o subestima cobertura dependiendo del tipo de producto. Y se despliegan los primeros agentes aut&oacute;nomos de vigilancia.</p>
             <ul>
-              <li>Agente Supabase: pool de conexiones, RLS, migraciones, storage</li>
-              <li>Agente Odoo: sesiones POS abiertas, BOMs hu&eacute;rfanos, lotes sin fecha</li>
-              <li>Agente App: deployment, edge function latency, bundle size</li>
-              <li>Retiros mid-session, 70-P rack map, bsc_goals, Resumen Mensual</li>
+              <li>Indexaci&oacute;n del buscador una sola vez por sesi&oacute;n (no en cada vista)</li>
+              <li>Correcci&oacute;n de memory leaks en suscripciones Realtime</li>
+              <li>Velocidad de venta con ratio BOM correcto para productos ARMADO</li>
+              <li>Sell-through KPI con datos reales de stock.move (no heur&iacute;sticos de bootstrap)</li>
+              <li>Primeros agentes: sesi&oacute;n POS abierta sin raz&oacute;n, lotes sin fecha, sync retrasado</li>
+              <li>Aprobaciones de compra migradas de localStorage a base de datos (persistentes entre dispositivos)</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag">Agentes infra</span><span class="tl-tag">App</span></div>
+          <div class="tl-tags"><span class="tl-tag">Rendimiento</span><span class="tl-tag">Agentes</span><span class="tl-tag">Datos</span></div>
+        </div>
+
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 3</div>
+          <div class="tl-title">AI Natives &mdash; Sesi&oacute;n 1: Qu&eacute; es la IA y c&oacute;mo pensar con ella</div>
+          <div class="tl-body">
+            Introducci&oacute;n para personas que nunca han interactuado con inteligencia artificial. Qu&eacute; es, qu&eacute; puede hacer, qu&eacute; no puede hacer, y por qu&eacute; importa entenderlo ahora. C&oacute;mo formular preguntas efectivas, c&oacute;mo evaluar si una respuesta es confiable, y c&oacute;mo desarrollar criterio para saber cu&aacute;ndo usar IA y cu&aacute;ndo no. Cada persona sale con herramientas instaladas en su tel&eacute;fono y la capacidad de usarlas.
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">AI Natives</span></div>
         </div>
 
         <div class="tl-phase">Fase 2 &mdash; Inteligencia (Meses 4-6)</div>
@@ -368,6 +386,16 @@
           <div class="tl-tags"><span class="tl-tag">Voz</span></div>
         </div>
 
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 6</div>
+          <div class="tl-title">AI Natives &mdash; Sesi&oacute;n 2: Herramientas pr&aacute;cticas y casos de uso</div>
+          <div class="tl-body">
+            Sesi&oacute;n con el tel&eacute;fono en la mano. Cada persona explora herramientas de IA aplicadas a situaciones reales de su vida y trabajo: resumir un texto largo, transcribir una nota de voz, hacer c&aacute;lculos que antes requer&iacute;an Excel, traducir instrucciones, generar borradores de cualquier documento. El objetivo es que pierdan el miedo y empiecen a experimentar por su cuenta.
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">AI Natives</span><span class="tl-tag">Voz</span></div>
+        </div>
+
         <div class="tl-phase">Fase 3 &mdash; Autonom&iacute;a (Meses 7-9)</div>
 
         <!-- MES 7 -->
@@ -375,6 +403,7 @@
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 7</div>
           <div class="tl-title">Sistema multi-agente &mdash; orquestaci&oacute;n completa</div>
+
           <div class="tl-body">
             Evoluci&oacute;n a un sistema de agentes especializados con enrutador central, control de acceso por agente, y capacidad de actuar sobre Odoo con gobernanza y auditor&iacute;a.
             <ul>
@@ -406,112 +435,104 @@
           <div class="tl-tags"><span class="tl-tag">Agentes infra</span></div>
         </div>
 
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 8</div>
+          <div class="tl-title">AI Natives &mdash; Sesi&oacute;n 3: Criterio y m&eacute;todos de pensamiento con IA</div>
+          <div class="tl-body">
+            C&oacute;mo pensar en problemas de una forma que la IA pueda ayudar a resolverlos. Marcos mentales para descomponer una situaci&oacute;n compleja en preguntas que la IA puede responder. C&oacute;mo saber qu&eacute; herramienta usar para qu&eacute; tipo de problema, d&oacute;nde buscar cuando no se sabe por d&oacute;nde empezar, y c&oacute;mo verificar que la respuesta sea correcta. La diferencia entre alguien que usa IA y alguien que piensa con IA.
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">AI Natives</span><span class="tl-tag">Multi-agente</span></div>
+        </div>
+
         <!-- MES 9 -->
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 9</div>
-          <div class="tl-title">NVIDIA NemoClaw &mdash; el cerebro que orquesta todo</div>
-          <div class="tl-body">
-            Todo lo anterior &mdash; agente de voz, sistema multi-agente, agentes de infraestructura &mdash; se conecta a NemoClaw como orquestador central. La plataforma enterprise que NVIDIA anunci&oacute; en GTC 2026, construida sobre el ecosistema OpenClaw con seguridad de grado empresarial (Agent Toolkit + OpenShell). NemoClaw no solo monitorea &mdash; act&uacute;a. Identifica productos que no se van a vender antes de que caduquen, calcula qu&eacute; clientes mayoristas tienen mayor probabilidad de comprarlos, genera &oacute;rdenes de venta autom&aacute;ticamente, y las distribuye a los grupos de WhatsApp correctos. Tony y Humberto consultan lo que quieran del negocio por WhatsApp en lenguaje natural. El digest diario llega sin que nadie lo pida: ventas, merma, alertas, sem&aacute;foro de KPIs. Merma potencial convertida en ingresos reales.
-            <ul>
-              <li>Orquestaci&oacute;n central de todos los agentes (voz, multi-agente, infraestructura)</li>
-              <li>Detecci&oacute;n predictiva de caducidad &rarr; &oacute;rdenes de mayoreo autom&aacute;ticas &rarr; WhatsApp a clientes espec&iacute;ficos</li>
-              <li>Agente conversacional para gerencia v&iacute;a WhatsApp en lenguaje natural</li>
-              <li>Digest diario: ventas, merma, alertas, KPIs &mdash; sin que nadie pregunte</li>
-              <li>Alertas proactivas de desabasto, anomal&iacute;as operativas, y oportunidades de compra</li>
-              <li>Seguridad enterprise: pol&iacute;ticas de privacidad, gobernanza, auditor&iacute;a de cada acci&oacute;n aut&oacute;noma</li>
-            </ul>
-          </div>
-          <div class="tl-tags"><span class="tl-tag green">NemoClaw</span><span class="tl-tag green">Ingresos</span><span class="tl-tag">Enterprise</span></div>
-        </div>
-
-        <div class="tl-phase">Fase 4 &mdash; Blindaje y entrega (Meses 10-12)</div>
-
-        <!-- MES 9.5: VISION COMPUTACIONAL -->
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Mes 9-10</div>
           <div class="tl-title">Visi&oacute;n computacional aplicada</div>
           <div class="tl-body">
-            <p style="margin-bottom: 0.75rem;">Un puesto de registro r&aacute;pido con c&aacute;mara en el &aacute;rea de recepci&oacute;n. El operador coloca el producto, lo voltea para mostrar ambos lados, y el sistema de visi&oacute;n computacional extrae autom&aacute;ticamente: nombre comercial, concentraci&oacute;n, forma farmac&eacute;utica, fabricante, c&oacute;digo de barras, n&uacute;mero de lote y fecha de caducidad. Si el producto ya existe en el cat&aacute;logo, lo identifica y solo pregunta: &ldquo;&iquest;Cu&aacute;ntas unidades?&rdquo; Si es nuevo (gen&eacute;ricos sin transformaci&oacute;n, que llegan sin aviso), lo registra con todos los datos capturados y solicita confirmaci&oacute;n. Elimina la captura manual de datos &mdash; cada producto que hoy requiere 2-3 minutos de escritura se registra en 15 segundos con una foto.</p>
+            <p style="margin-bottom: 0.75rem;">Un puesto de registro r&aacute;pido con c&aacute;mara en el &aacute;rea de recepci&oacute;n. El operador coloca el producto, lo voltea para mostrar ambos lados, y el sistema de visi&oacute;n computacional extrae autom&aacute;ticamente: nombre comercial, concentraci&oacute;n, forma farmac&eacute;utica, fabricante, c&oacute;digo de barras, n&uacute;mero de lote y fecha de caducidad. Si el producto existe en el cat&aacute;logo, lo identifica y solo pregunta: &ldquo;&iquest;Cu&aacute;ntas unidades?&rdquo; Si es nuevo, lo registra con los datos capturados. Elimina la captura manual &mdash; cada producto que hoy requiere 2-3 minutos de escritura se registra en 15 segundos.</p>
             <ul>
               <li><strong>Registro por c&aacute;mara</strong>: 2 tomas (frente + reverso), OCR farmac&eacute;utico especializado en es-MX</li>
-              <li><strong>Match autom&aacute;tico</strong>: cruza contra catálogo de 8,700+ productos por nombre + c&oacute;digo de barras + fabricante</li>
-              <li><strong>Alta autom&aacute;tica de gen&eacute;ricos</strong>: productos sin ficha previa se registran con los datos extra&iacute;dos por visi&oacute;n</li>
-              <li><strong>Monitoreo de actividad en armado</strong>: estimaci&oacute;n de cajas procesadas por turno, visibilidad de productividad sin intervenci&oacute;n manual</li>
+              <li><strong>Match autom&aacute;tico</strong>: cruza contra cat&aacute;logo de 8,700+ productos</li>
+              <li><strong>Alta autom&aacute;tica de gen&eacute;ricos</strong>: productos sin ficha previa se registran con los datos extra&iacute;dos</li>
+              <li><strong>Monitoreo de actividad en armado</strong>: estimaci&oacute;n de cajas procesadas por turno</li>
             </ul>
           </div>
           <div class="tl-tags"><span class="tl-tag green">Visi&oacute;n computacional</span><span class="tl-tag">App</span></div>
         </div>
 
+        <div class="tl-phase">Fase 4 &mdash; Blindaje y entrega (Meses 10-12)</div>
+
         <!-- MES 10 -->
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 10</div>
-          <div class="tl-title">Inteligencia de cliente + analytics avanzado</div>
+          <div class="tl-title">Inteligencia de cliente + analytics avanzado + modo auditor&iacute;a</div>
           <div class="tl-body">
-            La farmacia tiene 5,571 clientes con tarjeta de lealtad &mdash; cada compra genera datos rastreables. Este mes activa un motor de inteligencia de cliente que convierte esos datos en acci&oacute;n: perfiles de compra (frecuencia, productos recurrentes, sensibilidad a precio), predicci&oacute;n de recompra (si el cliente X compra antihipertensivos cada 30 d&iacute;as y lleva 28 sin venir, el sistema lo detecta), y &mdash; cr&iacute;ticamente &mdash; conexi&oacute;n con caducidad: si hay un lote de Eutirox que caduca en 45 d&iacute;as y 23 clientes lo compran recurrentemente, el sistema genera ofertas personalizadas antes de que el producto se convierta en merma. Cada producto que se vende anticipadamente es merma que no fue.
+            <p style="margin-bottom: 0.75rem;">La farmacia tiene 5,571 clientes con tarjeta de lealtad &mdash; cada compra genera datos rastreables. Este mes activa un motor de inteligencia de cliente que convierte esos datos en acci&oacute;n: perfiles de compra (frecuencia, productos recurrentes, sensibilidad a precio), predicci&oacute;n de recompra (si el cliente X compra antihipertensivos cada 30 d&iacute;as y lleva 28 sin venir, el sistema lo detecta), y &mdash; cr&iacute;ticamente &mdash; conexi&oacute;n con caducidad: si hay un lote de Eutirox que caduca en 45 d&iacute;as y 23 clientes lo compran recurrentemente, el sistema genera ofertas personalizadas antes de que el producto se convierta en merma.</p>
             <ul>
               <li>Perfil de compra por cliente: frecuencia, canasta habitual, respuesta a promos</li>
               <li>Predicci&oacute;n de recompra: alerta cuando un cliente recurrente no ha regresado</li>
               <li>Cruce caducidad &times; base de clientes: ofertas dirigidas para rotar lotes</li>
               <li>Analytics de eficiencia manufactura por operador</li>
               <li>Backorder dashboard por proveedor con lead time</li>
-              <li>Pago a proveedores (tracking + reconciliaci&oacute;n)</li>
+              <li><strong>Modo auditor&iacute;a</strong>: activaci&oacute;n r&aacute;pida ante inspecci&oacute;n COFEPRIS/SAT &mdash; reporte consolidado de lotes, trazabilidad, FEFO, movimientos con timestamps, reconciliaci&oacute;n Odoo vs stock f&iacute;sico, exportable a PDF</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag green">Cliente</span><span class="tl-tag">App</span><span class="tl-tag">AI</span></div>
+          <div class="tl-tags"><span class="tl-tag green">Cliente</span><span class="tl-tag green">Cumplimiento</span><span class="tl-tag">AI</span></div>
         </div>
 
-        <!-- MES 11: MODO AUDITORÍA -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Mes 10</div>
+          <div class="tl-title">AI Natives &mdash; Sesi&oacute;n 4: Crear soluciones propias</div>
+          <div class="tl-body">
+            La sesi&oacute;n m&aacute;s avanzada. Cada persona aprende a construir herramientas simples con IA para resolver problemas que solo ellos ven en su d&iacute;a a d&iacute;a &mdash; sin programar. Calculadoras, listas de verificaci&oacute;n, formatos, consultas r&aacute;pidas. El objetivo es que cada quien se vuelva capaz de inventar soluciones por su cuenta.
+          </div>
+          <div class="tl-tags"><span class="tl-tag green">AI Natives</span></div>
+        </div>
+
+        <!-- MES 11: NEMOCLAW -->
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 11</div>
-          <div class="tl-title">Modo auditor&iacute;a y blindaje regulatorio</div>
+          <div class="tl-title">NVIDIA NemoClaw &mdash; el cerebro que lo sabe todo de la farmacia</div>
           <div class="tl-body">
-            <p style="margin-bottom: 0.75rem;">Un mecanismo de activaci&oacute;n r&aacute;pida que, ante una inspecci&oacute;n regulatoria (COFEPRIS, SAT) o cualquier situaci&oacute;n que requiera demostraci&oacute;n inmediata de cumplimiento, consolida y presenta toda la operaci&oacute;n en un estado de verificaci&oacute;n integral. El sistema ya tiene los datos &mdash; este m&oacute;dulo los organiza para que cualquier auditor vea cumplimiento total en segundos, no en horas de b&uacute;squeda manual entre 25 pantallas.</p>
-            <ul>
-              <li><strong>Panel de cumplimiento</strong>: vista consolidada de caducidades vigentes, lotes con trazabilidad completa, movimientos de inventario con timestamps y responsables</li>
-              <li><strong>Reporte FEFO verificable</strong>: evidencia de que el sistema aplica First-Expiry-First-Out en cada venta y transferencia, con log auditable</li>
-              <li><strong>Reconciliaci&oacute;n instant&aacute;nea</strong>: cruce Odoo vs Supabase vs stock f&iacute;sico, con indicadores de discrepancia resueltos o pendientes</li>
-              <li><strong>Generaci&oacute;n de reportes bajo demanda</strong>: movimientos por producto, por lote, por fecha, por responsable &mdash; exportables a PDF en un click</li>
-              <li><strong>Historial de acciones gobernadas</strong>: cada acci&oacute;n del sistema multi-agente y de los agentes de voz queda registrada con pre/post image, aprobador, y timestamp</li>
-            </ul>
-          </div>
-          <div class="tl-tags"><span class="tl-tag green">Cumplimiento</span><span class="tl-tag">Seguridad</span></div>
-        </div>
+            <p style="margin-bottom: 0.75rem;">Todo lo anterior &mdash; agente de voz, sistema multi-agente, agentes de infraestructura, inteligencia de cliente &mdash; se conecta a NemoClaw como orquestador central. La plataforma enterprise que NVIDIA anunci&oacute; en GTC 2026, construida sobre el ecosistema OpenClaw con seguridad de grado empresarial (Agent Toolkit + OpenShell).</p>
 
-        <!-- MES 11-12: PROGRAMA AI NATIVES -->
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Mes 11-12</div>
-          <div class="tl-title">Programa AI Natives &mdash; la ventaja competitiva que nadie m&aacute;s tiene</div>
-          <div class="tl-body">
-            <p style="margin-bottom: 0.75rem;">La operaci&oacute;n de la farmacia ya est&aacute; resuelta por los sistemas &mdash; buscar productos, analizar ofertas, gestionar caducidades, todo eso lo hace la plataforma mejor y m&aacute;s r&aacute;pido que cualquier persona. El programa no busca que repliquen lo que la tecnolog&iacute;a ya hace. Busca que desarrollen habilidades que hoy no tienen y que abran posibilidades nuevas para la farmacia &mdash; cosas que nadie ha pensado todav&iacute;a porque nadie las sab&iacute;a hacer.</p>
+            <p style="margin-bottom: 0.75rem;">NemoClaw no es solo un orquestador &mdash; es la memoria viva y el cerebro anal&iacute;tico de la farmacia. Conoce los 87 procesos documentados, cada protocolo, cada proveedor, cada cliente, cada producto, cada lote, cada venta de los &uacute;ltimos 3 a&ntilde;os. Y no solo recuerda &mdash; razona. Tony le pregunta por WhatsApp &ldquo;&iquest;cu&aacute;l ha sido la correlaci&oacute;n entre mis descuentos de mayoreo y la reducci&oacute;n de merma en los &uacute;ltimos 6 meses?&rdquo; y NemoClaw genera queries complejos en PostgreSQL que cruzan tablas de ventas, caducidades, movimientos de stock y &oacute;rdenes de mayoreo, calcula la correlaci&oacute;n, y responde con un an&aacute;lisis estructurado &mdash; el tipo de pregunta que normalmente requiere un cient&iacute;fico de datos con acceso directo a la base de datos y conocimiento profundo del negocio.</p>
+
+            <p style="margin-bottom: 0.75rem;">&ldquo;&iquest;Qu&eacute; proveedores me est&aacute;n subiendo precio por encima de la inflaci&oacute;n y en qu&eacute; productos?&rdquo;, &ldquo;&iquest;Cu&aacute;l es la elasticidad de demanda de mis gen&eacute;ricos vs patentes por categor&iacute;a terap&eacute;utica?&rdquo;, &ldquo;&iquest;Si dejo de comprar estos 30 productos de baja rotaci&oacute;n, cu&aacute;nto libero en capital y cu&aacute;nto pierdo en venta?&rdquo; &mdash; preguntas que hoy requerir&iacute;an contratar a alguien con maestr&iacute;a en ciencia de datos, darle acceso a la base, explicarle el negocio durante semanas, y esperar d&iacute;as por cada an&aacute;lisis. NemoClaw lo hace en segundos porque ya conoce la estructura completa de los datos, los 87 procesos, y las reglas de negocio. Es un cient&iacute;fico de datos que nunca duerme, nunca olvida, y ya sabe c&oacute;mo funciona la farmacia.</p>
+
+            <p style="margin-bottom: 0.75rem;">Y cuando nadie pregunta, act&uacute;a solo: identifica productos que no se van a vender antes de que caduquen, genera &oacute;rdenes de mayoreo autom&aacute;ticamente, y las distribuye a los grupos de WhatsApp de los clientes con mayor probabilidad de compra.</p>
+
             <ul>
-              <li>Crear contenido para redes sociales de la farmacia &mdash; publicaciones, historias, textos promocionales &mdash; sin necesidad de contratar a alguien externo</li>
-              <li>Dise&ntilde;ar material impreso: volantes, carteles de promoci&oacute;n, comunicados para clientes, etiquetas especiales &mdash; con herramientas de IA gratuitas desde su tel&eacute;fono</li>
-              <li>Redactar comunicaciones profesionales: correos a proveedores, respuestas a quejas, mensajes a m&eacute;dicos, solicitudes a instituciones</li>
-              <li>Investigar productos nuevos, comparar alternativas de proveedores, resumir informaci&oacute;n t&eacute;cnica de medicamentos que antes les resultaba inaccesible</li>
-              <li>Resolver por su cuenta problemas que antes requer&iacute;an escalar: buscar respuestas, calcular, organizar, documentar &mdash; sin depender de nadie</li>
-              <li>En resumen: 9 personas que antes solo pod&iacute;an operar la farmacia, ahora pueden contribuir al negocio en dimensiones que antes requer&iacute;an contratar talento especializado</li>
+              <li>Orquestaci&oacute;n central de todos los agentes (voz, multi-agente, infraestructura, inteligencia de cliente)</li>
+              <li>Ciencia de datos en lenguaje natural: genera queries complejos en PostgreSQL, cruza m&uacute;ltiples tablas, calcula correlaciones, proyecta escenarios</li>
+              <li>Memoria completa: 87 procesos, protocolos, proveedores, clientes, historial de ventas, lotes, caducidades</li>
+              <li>Detecci&oacute;n predictiva de caducidad &rarr; &oacute;rdenes de mayoreo autom&aacute;ticas &rarr; WhatsApp a clientes espec&iacute;ficos</li>
+              <li>Digest diario: ventas, merma, alertas, KPIs &mdash; sin que nadie pregunte</li>
+              <li>Accesible por WhatsApp, Telegram, o el canal que se configure</li>
+              <li>Seguridad enterprise: pol&iacute;ticas de privacidad, gobernanza, auditor&iacute;a de cada acci&oacute;n aut&oacute;noma</li>
             </ul>
           </div>
-          <div class="tl-tags"><span class="tl-tag green">AI Natives</span><span class="tl-tag green">Ventaja competitiva</span></div>
+          <div class="tl-tags"><span class="tl-tag green">NemoClaw</span><span class="tl-tag green">Ingresos</span><span class="tl-tag">Enterprise</span></div>
         </div>
 
         <!-- MES 12 -->
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-month">Mes 12</div>
-          <div class="tl-title">Autonom&iacute;a operativa &mdash; handoff</div>
+          <div class="tl-title">AI Natives &mdash; Sesi&oacute;n 5 + entrega del sistema al estado del arte</div>
           <div class="tl-body">
-            La farmacia opera de forma aut&oacute;noma. Los agentes vigilan la infraestructura. El sistema multi-agente responde consultas y ejecuta acciones gobernadas. El agente de voz atiende llamadas. NemoClaw reporta sin que nadie pregunte. El equipo sabe usar cada herramienta.
+            <p style="margin-bottom: 0.75rem;">&Uacute;ltima sesi&oacute;n del programa. El equipo consolida todo lo aprendido: interactuar con NemoClaw, interpretar alertas, construir herramientas internas, ser el primer punto de soluci&oacute;n.</p>
+            <p style="margin-bottom: 0.75rem;">Al cierre del mes 12, la farmacia recibe el sistema m&aacute;s avanzado que la tecnolog&iacute;a actual permite construir para esta operaci&oacute;n: agente de voz, sistema multi-agente, NemoClaw con ciencia de datos en lenguaje natural, visi&oacute;n computacional, modo auditor&iacute;a, inteligencia de cliente, y monitoreo aut&oacute;nomo 24/7. Todo funcionando, todo documentado, todo entregado.</p>
+            <p>La inteligencia artificial evoluciona trimestralmente. Si en el futuro hay capacidades nuevas que beneficien a la farmacia &mdash; modelos m&aacute;s potentes, nuevas integraciones, funcionalidades que hoy no existen &mdash; se pueden discutir como una extensi&oacute;n del proyecto en ese momento.</p>
             <ul>
               <li>Documentaci&oacute;n operativa completa</li>
               <li>Runbooks de emergencia para cada capa del stack</li>
-              <li>Handoff: la farmacia no depende del desarrollador para operar</li>
-              <li>Plan de soporte post-roadmap (opcional, se cotiza por separado)</li>
+              <li>Plan de continuidad (opcional, se cotiza por separado)</li>
             </ul>
           </div>
           <div class="tl-tags"><span class="tl-tag green">Entrega</span></div>
@@ -522,7 +543,7 @@
   </section>
 
   <!-- DAY IN THE LIFE -->
-  <section style="background: #1A1A1A; color: #FAFAF8; border: none;">
+  <section class="section-dark" style="background: #1A1A1A; color: #FAFAF8; border: none;">
     <div class="wrap">
       <div class="section-label" style="color: var(--accent);">Mes 12</div>
       <div class="section-title" style="color: #FAFAF8;">Un d&iacute;a t&iacute;pico en la farmacia transformada</div>
@@ -530,48 +551,63 @@
       <div style="display: grid; gap: 1.5rem; margin-top: 2rem; font-size: 0.92rem; color: #ccc; line-height: 1.8;">
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
-          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">06:30</span>
-          <span>Tony recibe un digest por WhatsApp sin haberlo pedido: ventas de ayer, merma del mes, 3 productos que necesitan atenci&oacute;n, y un sem&aacute;foro verde en los 15 KPIs del Balanced Scorecard. No tuvo que llamar a nadie.</span>
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">05:50</span>
+          <span style="color: #999;">NemoClaw termina su an&aacute;lisis nocturno. Identific&oacute; 14 productos cuya velocidad de venta no alcanza a cubrir su caducidad. Cruza contra la base de 5,571 clientes: 43 de ellos compran esos productos con regularidad. Genera 3 &oacute;rdenes de mayoreo con descuento dirigido y las programa para enviarse a las 9am a los grupos de WhatsApp correspondientes. Ning&uacute;n humano intervino.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
-          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">08:00</span>
-          <span>Un cliente llama preguntando si tienen Amoxicilina 500mg. El agente de voz contesta en el primer tono, confirma disponibilidad y precio, y ofrece apartar el producto. Ning&uacute;n vendedor fue interrumpido.</span>
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">06:30</span>
+          <span>Tony abre WhatsApp. Tiene un mensaje de NemoClaw: resumen de ayer &mdash; ventas $47,200, merma $0, 3 &oacute;rdenes de mayoreo generadas autom&aacute;ticamente durante la noche para rotar producto pr&oacute;ximo a caducar, sem&aacute;foro verde en 14 de 15 KPIs (uno amarillo: cobertura de Metformina baja). Tony responde: &ldquo;&iquest;qu&eacute; proveedores me pueden surtir Metformina esta semana y a qu&eacute; precio me han vendido en los &uacute;ltimos 3 meses?&rdquo; NemoClaw ejecuta el query, cruza 4 tablas, y responde en 8 segundos con una comparativa por proveedor.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">08:15</span>
+          <span>Tres clientes llaman en los primeros 15 minutos. El agente de voz atiende las tres llamadas simult&aacute;neamente: confirma disponibilidad de Amoxicilina 500mg, indica precio y horario al segundo, y al tercero le programa una recolecci&oacute;n. Los vendedores no se enteraron &mdash; est&aacute;n atendiendo a la gente que ya est&aacute; en mostrador.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">09:15</span>
-          <span>El Dr. Mart&iacute;nez abre su pantalla en el consultorio. Busca &ldquo;metformina&rdquo; &mdash; el sistema le muestra primero un lote que caduca en 60 d&iacute;as (sin que &eacute;l sepa por qu&eacute;). Selecciona, imprime la receta con QR. El paciente baja al mostrador.</span>
+          <span>El Dr. Mart&iacute;nez abre su pantalla en el consultorio. Busca &ldquo;metformina&rdquo; &mdash; el sistema le muestra primero un lote que caduca en 60 d&iacute;as (sin que &eacute;l sepa por qu&eacute;). Selecciona 4 productos, imprime la receta con QR. El paciente baja al mostrador.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">09:17</span>
-          <span>El vendedor escanea el QR de la receta. Los 4 productos se cargan autom&aacute;ticamente. Dos est&aacute;n en mostrador &mdash; los agarra. Los otros dos son kits: la comanda se genera sola y Kevin ya los ve en su Kanban. La comisi&oacute;n del Dr. Mart&iacute;nez queda registrada sin que nadie la calcule.</span>
+          <span>El vendedor escanea el QR. Los 4 productos se cargan. Dos est&aacute;n en mostrador &mdash; los agarra. Los otros dos son kits: la comanda se genera sola y Kevin ya los ve en su Kanban con prioridad. La comisi&oacute;n del 10% del Dr. Mart&iacute;nez queda registrada autom&aacute;ticamente con linaje completo de la receta.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">10:30</span>
-          <span>Un proveedor env&iacute;a una foto de lista de precios por WhatsApp. La IA la parsea en 12 segundos, cruza contra inventario, y le dice a Lupita: &ldquo;3 productos COMPRAR (buen precio + stock bajo), 7 NO COMPRAR (stock suficiente), 1 ESCALAR a Humberto (>$5,000).&rdquo;</span>
+          <span>Un proveedor env&iacute;a una foto de lista de precios por WhatsApp. La IA la parsea en 12 segundos, cruza contra inventario, velocidad y caducidad, y le dice a Lupita: &ldquo;3 productos COMPRAR (buen precio + stock bajo), 7 NO COMPRAR (stock suficiente), 1 ESCALAR a Humberto (>$5,000).&rdquo; Lupita aprueba los 3 con un tap. La orden de compra se genera en Odoo autom&aacute;ticamente.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">11:45</span>
-          <span>Llega un proveedor con 12 cajas de gen&eacute;ricos nuevos que no est&aacute;n en el cat&aacute;logo. Fer coloca cada producto frente a la c&aacute;mara, lo voltea. El sistema de visi&oacute;n computacional lee nombre, concentraci&oacute;n, fabricante, lote y caducidad en 15 segundos. Solo confirma unidades. Los 12 productos quedan registrados en 3 minutos &mdash; antes tomaba 40 minutos de captura manual.</span>
+          <span>Llega un proveedor con 12 cajas de gen&eacute;ricos nuevos que no est&aacute;n en el cat&aacute;logo. Fer coloca cada producto frente a la c&aacute;mara, lo voltea. El sistema de visi&oacute;n computacional lee nombre, concentraci&oacute;n, fabricante, lote y caducidad. Solo confirma unidades. 12 productos registrados en 3 minutos &mdash; antes era 40 minutos de captura manual.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">13:30</span>
+          <span>Humberto le pregunta a NemoClaw por WhatsApp: &ldquo;&iquest;cu&aacute;l ha sido el impacto en margen de los descuentos que hemos dado en mayoreo este trimestre vs el mismo trimestre del a&ntilde;o pasado?&rdquo; NemoClaw genera un query que cruza ventas mayoreo, m&aacute;rgenes por producto, y datos hist&oacute;ricos de 2025. Responde con una tabla comparativa en 11 segundos. Humberto la reenv&iacute;a a Tony.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">14:00</span>
-          <span>NemoClaw detecta que 8 productos de alta rotaci&oacute;n est&aacute;n a punto de agotarse en mostrador pero tienen excedente en bodega. Genera una sugerencia de transferencia y se la env&iacute;a a Paco por notificaci&oacute;n push. Paco confirma con un tap. La transferencia se ejecuta en Odoo.</span>
+          <span>NemoClaw detecta que 8 productos de alta rotaci&oacute;n est&aacute;n a punto de agotarse en mostrador pero tienen excedente en bodega. Env&iacute;a sugerencia de transferencia a Paco por notificaci&oacute;n push. Paco confirma con un tap. La transferencia se ejecuta en Odoo sin que nadie abra una computadora.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">15:00</span>
-          <span>COFEPRIS se presenta sin aviso previo. Humberto activa el modo auditor&iacute;a desde su tablet. En 30 segundos tiene un reporte consolidado: todos los lotes con trazabilidad completa, caducidades verificadas, movimientos de inventario con timestamps y responsables, cumplimiento FEFO documentado. El inspector revisa, verifica 3 productos al azar contra el reporte, todo coincide. Se va en 20 minutos. Antes, esto era un d&iacute;a entero buscando en libretas y hojas de c&aacute;lculo.</span>
+          <span>Inspecci&oacute;n sin aviso. Humberto activa el modo auditor&iacute;a desde su tablet. En 30 segundos: reporte consolidado con todos los lotes, trazabilidad completa, movimientos con timestamps y responsables, cumplimiento FEFO documentado. El inspector verifica 3 productos al azar, todo coincide. Se va en 20 minutos. Antes era un d&iacute;a entero con libretas.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
+          <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">18:00</span>
+          <span>Cierre de caja. La cajera cuenta denominaciones, el sistema calcula la diferencia contra lo esperado. Cuadra al peso. Las 47 ventas del d&iacute;a ya est&aacute;n sincronizadas con Odoo, los puntos de lealtad actualizados, las comisiones m&eacute;dicas registradas, y el inventario reflejado en tiempo real en todas las ubicaciones.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;">
           <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 50px;">03:00</span>
-          <span style="color: #999;">Nadie est&aacute; despierto. Un agente detecta que la sincronizaci&oacute;n de stock entre Odoo y la app lleva 4 horas de retraso. Identifica la causa (un timeout en la API), reintenta con backoff, resuelve, y registra el incidente. En la ma&ntilde;ana, el reporte dice: &ldquo;Incidente detectado y resuelto a las 03:12. Cero impacto.&rdquo;</span>
+          <span style="color: #999;">Nadie est&aacute; despierto. Un agente detecta que la sincronizaci&oacute;n de stock lleva 4 horas de retraso. Identifica la causa, reintenta, resuelve. En la ma&ntilde;ana, el reporte dice: &ldquo;Incidente detectado a las 03:08, resuelto a las 03:12. Cero impacto en operaci&oacute;n.&rdquo; Tony ni se enter&oacute;.</span>
         </div>
 
       </div>
@@ -594,7 +630,7 @@
           <tr><td>Pilar 2 &mdash; Agente de voz omnicanal (Fase 1 + 2)<br><small style="color:var(--text-3)">Atenci&oacute;n telef&oacute;nica 24/7, llamadas salientes, acciones gobernadas</small></td><td>$650,000 + IVA</td></tr>
           <tr><td>Pilar 3 &mdash; Sistema multi-agente (Fase 1 + 2)<br><small style="color:var(--text-3)">3 chatbots + orquestaci&oacute;n, lectura de recetas por foto, auditor&iacute;a</small></td><td>$500,000 + IVA</td></tr>
           <tr><td>Pilar 4 &mdash; NVIDIA NemoClaw: inteligencia aut&oacute;noma enterprise<br><small style="color:var(--text-3)">Plataforma GTC 2026, Agent Toolkit + OpenShell, agente WhatsApp, alertas proactivas</small></td><td>$600,000 + IVA</td></tr>
-          <tr><td>Pilar 5 &mdash; Programa AI Natives (habilitaci&oacute;n del equipo)<br><small style="color:var(--text-3)">Programa presencial para convertir a 9 empleados en usuarios nativos de IA</small></td><td>$990,000 + IVA</td></tr>
+          <tr><td>Pilar 5 &mdash; Programa AI Natives (habilitaci&oacute;n del equipo)<br><small style="color:var(--text-3)">Programa presencial para convertir a los empleados en usuarios nativos de IA</small></td><td>$990,000 + IVA</td></tr>
           <tr><td>Pilar 6 &mdash; Infraestructura aut&oacute;noma + prevenci&oacute;n de incidentes<br><small style="color:var(--text-3)">Red de agentes 24/7, detecci&oacute;n en &lt;30s, resoluci&oacute;n sin intervenci&oacute;n humana, equivalente a equipo DevOps</small></td><td>$800,000 + IVA</td></tr>
           <tr class="total"><td>Suma de componentes individuales</td><td class="struck">$4,390,000 + IVA</td></tr>
           <tr class="bundle"><td>Roadmap integrado (12 meses)</td><td>$1,800,000 + IVA</td></tr>
@@ -609,7 +645,7 @@
       <div class="invest-box">
         <div class="invest-price">$150,000 <small style="font-size:0.5em;font-weight:400;color:var(--text-2)">MXN + IVA</small></div>
         <div class="invest-period">por mes &times; 12 meses</div>
-        <div class="invest-note" style="margin-top: 1.25rem;">Incluye desarrollo, bugs, features, agentes de voz, sistema multi-agente, NemoClaw, visi&oacute;n computacional, modo auditor&iacute;a, monitoreo 24/7 y capacitaci&oacute;n. Excluye: licencias Odoo, hardware y OPEX de terceros (ver estimaci&oacute;n abajo).</div>
+        <div class="invest-note" style="margin-top: 1.25rem;">Incluye: estabilizaci&oacute;n completa de la plataforma, desarrollo de nuevos m&oacute;dulos, agentes de voz, sistema multi-agente, NVIDIA NemoClaw, visi&oacute;n computacional, modo auditor&iacute;a, monitoreo aut&oacute;nomo 24/7 y programa AI Natives. Excluye: licencias Odoo, hardware y OPEX de terceros (ver estimaci&oacute;n abajo).</div>
       </div>
     </div>
   </section>
@@ -672,12 +708,12 @@
             <tr><td>Vercel Pro (hosting de la aplicaci&oacute;n)</td><td>$340 MXN</td></tr>
             <tr><td>Twilio Voice (500 llamadas/mes, 3 min promedio, M&eacute;xico)</td><td>$840 MXN</td></tr>
             <tr><td>STT + TTS (Deepgram Nova-3 es-MX + OpenAI TTS HD)</td><td>$540 MXN</td></tr>
-            <tr><td>APIs de IA (GPT-4o-mini / Gemini Flash, ~2,500 llamadas/mes)</td><td>$30 MXN</td></tr>
+            <tr><td>APIs de IA (modelos competentes, ~2,500 llamadas/mes)</td><td>$30 MXN</td></tr>
             <tr><td>WhatsApp Business API (200 marketing + 300 utilidad/mes)</td><td>$95 MXN</td></tr>
-            <tr class="total"><td><strong>Estimado total OPEX</strong></td><td><strong>~$2,355 /mes</strong></td></tr>
+            <tr class="total"><td><strong>Estimado total OPEX base</strong></td><td><strong>~$2,355 /mes</strong></td></tr>
           </tbody>
         </table>
-        <p style="font-size: 0.78rem; color: var(--text-3); margin-top: 0.5rem; font-style: italic;">Estimaci&oacute;n basada en precios publicados a marzo 2026. El costo total de APIs de IA es pr&aacute;cticamente insignificante a este volumen &mdash; el stack completo cuesta menos que 2 d&iacute;as de salario m&iacute;nimo.</p>
+        <p style="font-size: 0.78rem; color: var(--text-3); margin-top: 0.5rem; font-style: italic;">Nota: para los agentes NemoClaw / OpenClaw se requiere una licencia adicional de modelos de lenguaje que se define al momento de la implementaci&oacute;n, con un rango de $5 a $200 USD mensuales dependiendo de la capacidad seleccionada.</p>
       </div>
     </div>
   </section>
@@ -693,14 +729,13 @@
   </section>
 
   <!-- CTA -->
-  <section style="background: #1A1A1A; color: #FAFAF8; border: none;">
+  <section class="section-dark" style="background: #1A1A1A; color: #FAFAF8; border: none;">
     <div class="wrap" style="text-align: center;">
       <div class="section-label" style="color: var(--accent);">Siguiente paso</div>
-      <div class="section-title" style="color: #FAFAF8; font-size: 1.8rem;">Una llamada de 30 minutos para definir la fecha de arranque</div>
-      <p style="font-size: 1rem; color: #ccc; max-width: 500px; margin: 1rem auto 2rem; line-height: 1.8;">Los precios y condiciones de esta propuesta est&aacute;n vigentes hasta el <strong style="color: #FAFAF8;">30 de abril de 2026</strong>. Despu&eacute;s de esa fecha, los costos de APIs de inteligencia artificial se ajustan trimestralmente.</p>
+      <div class="section-title" style="color: #FAFAF8; font-size: 1.8rem;">Ver contrato</div>
+      <p style="font-size: 1rem; color: #ccc; max-width: 500px; margin: 1rem auto 2rem; line-height: 1.8;">Los precios y condiciones de esta propuesta est&aacute;n vigentes hasta el <strong style="color: #FAFAF8;">cierre de marzo de 2026</strong>.</p>
       <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
-        <a href="https://wa.me/5213314397921?text=Tony%20Armenta%20-%20Propuesta%20Roadmap%2012%20meses" target="_blank" style="display: inline-block; padding: 1rem 2.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; transition: opacity 0.2s;">Contactar por WhatsApp</a>
-        <a href="contrato.html" target="_blank" style="display: inline-block; padding: 0.75rem 2rem; background: transparent; color: #FAFAF8; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(250,250,248,0.3); transition: opacity 0.2s;">Imprimir contrato</a>
+        <a href="contrato.html" target="_blank" style="display: inline-block; padding: 1rem 2.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; transition: opacity 0.2s;">Ver contrato</a>
         <span style="font-family: var(--mono); font-size: 0.78rem; color: #999;">Ra&uacute;l Ch&iacute;o Le&oacute;n &mdash; Eigen Atlas</span>
       </div>
     </div>
@@ -709,7 +744,7 @@
   <footer>
     <div class="wrap">
       <p style="margin-bottom:0.5rem;"><em>Eigen Atlas</em> / Propuesta confidencial</p>
-      <p>Documento preparado para Jes&uacute;s Antonio Guzm&aacute;n Armenta. Precios vigentes hasta el 30 de abril de 2026. Todos los precios en MXN + IVA. Informaci&oacute;n protegida por acuerdo de confidencialidad.</p>
+      <p>Documento preparado para Jes&uacute;s Antonio Guzm&aacute;n Armenta. Precios vigentes hasta el cierre de marzo de 2026. Todos los precios en MXN + IVA. Informaci&oacute;n protegida por acuerdo de confidencialidad.</p>
     </div>
   </footer>
 
